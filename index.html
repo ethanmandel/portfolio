@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ethan Mandel | Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f3f4f6; }
+    .accent { color: #9A0002; }
+    .bg-accent { background-color: #9A0002; }
+    .soft-card { background: rgba(255,255,255,.78); backdrop-filter: blur(10px); }
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-576px); }
+    }
+    .animate-scroll { animation: scroll 16s linear infinite; }
+  </style>
+</head>
+<body class="font-sans text-gray-900">
+
+<!-- NAV -->
+<nav class="fixed top-0 z-50 w-full border-b border-black border-opacity-10 bg-white bg-opacity-70 backdrop-filter backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="#top" class="text-xl font-semibold tracking-tight">ethan mandel</a>
+    <div class="hidden gap-8 text-sm font-medium md:flex">
+      <a href="#about" class="hover:opacity-60">about</a>
+      <a href="#projects" class="hover:opacity-60">projects</a>
+      <a href="#resume" class="hover:opacity-60">resume</a>
+      <a href="#contact" class="hover:opacity-60">contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="top" class="min-h-screen flex items-center pt-24" style="background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 55%, #ffffff 100%);">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
+      <div class="text-left">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-gray-500">UX / Product Design / Creative Tech</p>
+        <h1 class="mb-6 text-4xl font-semibold leading-tight md:text-6xl">
+          What's Up? I'm <span class="accent font-bold">Ethan</span>
+        </h1>
+        <p class="max-w-xl text-lg leading-relaxed text-gray-700 md:text-xl">
+          I like creating things real people interact with. Whether it starts through the lens of a camera or behind a screen, my perspective plays a big role in how I shape my work.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a href="#projects" class="rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Projects</a>
+          <a href="#about" class="rounded-full border border-gray-900 px-6 py-3 transition hover:bg-gray-900 hover:text-white">About Me</a>
+        </div>
+      </div>
+      <div class="flex justify-center md:justify-end">
+        <img src="images/hero-fade.png" alt="Portrait or portfolio hero visual" class="w-full max-w-xs object-contain md:max-w-md" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-white py-24">
+  <div class="container mx-auto px-6">
+    <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+      <div>
+        <h2 class="text-4xl font-bold">A little behind the lens.</h2>
+      </div>
+      <div class="space-y-6 text-lg leading-relaxed text-gray-700 md:col-span-2">
+        <p>
+          I got into design through photography, music, and spending way too much time noticing how people interact with things. I like work that feels thoughtful, visually strong, and actually enjoyable to use.
+        </p>
+        <p>
+          Studying Informatics and Human-Computer Interaction at University of California, Irvine gave me the technical side of design, but a lot of my perspective comes from creative work outside of school. Photography taught me composition and attention to detail. Music taught me patience, experimentation, and rhythm.
+        </p>
+        <p>
+          Outside of design, you’ll probably find me behind a camera, on a bike ride, or lost in my favorite album.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section id="projects" class="py-24 bg-gray-100">
+  <div class="container mx-auto px-6">
+    <div class="mx-auto mb-14 max-w-6xl">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">Featured Projects</p>
+      <h2 class="mb-4 text-4xl font-bold">Selected work</h2>
+      <p class="max-w-3xl text-lg leading-relaxed text-gray-700">
+        A few projects that show how I think through research, structure, visuals, and the actual experience people have when using something.
+      </p>
+    </div>
+
+    <!-- Remembra -->
+    <article id="remembra" class="mx-auto mb-16 max-w-6xl overflow-hidden rounded-3xl bg-white p-8 shadow-xl md:p-12">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">App Concept / UX Case Study</p>
+          <h3 class="mb-5 text-4xl font-bold">Remembra</h3>
+          <p class="mb-6 text-lg leading-relaxed text-gray-700">
+            A music-based memory care app concept designed to help patients and caregivers use familiar songs as a way to reconnect with memories, support mood, and create a more personal care experience.
+          </p>
+          <div class="mb-8 grid grid-cols-2 gap-4 text-sm">
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Role</p><p class="text-gray-600">Product / UX Lead</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Focus</p><p class="text-gray-600">Research, prototyping, app flow</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, React, Expo</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Type</p><p class="text-gray-600">College startup concept</p></div>
+          </div>
+          <a href="remembra.html" class="inline-block rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Case Study</a>
+        </div>
+        <div class="grid grid-cols-3 gap-4 self-center">
+          <img src="images/remembra/Welcome.png" alt="Remembra welcome screen" class="rounded-2xl shadow" />
+          <img src="images/remembra/Set Up Selection.png" alt="Remembra set up screen" class="mt-10 rounded-2xl shadow" />
+          <img src="images/remembra/Now Playing.png" alt="Remembra now playing screen" class="rounded-2xl shadow" />
+        </div>
+      </div>
+    </article>
+
+    <!-- Laguna Ocean Foundation -->
+    <article id="laguna" class="mx-auto mb-16 max-w-6xl overflow-hidden rounded-3xl bg-white p-8 shadow-xl md:p-12">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">Nonprofit Website Redesign</p>
+          <h3 class="mb-5 text-4xl font-bold">Laguna Ocean Foundation</h3>
+          <p class="mb-6 text-lg leading-relaxed text-gray-700">A redesigned educational website for tidepool visitors, focused on clearer trip planning, species discovery, tide information, and a more useful on-site experience through QR signage.</p>
+          <div class="mb-8 grid grid-cols-2 gap-4 text-sm">
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Role</p><p class="text-gray-600">UX / UI Designer</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Focus</p><p class="text-gray-600">Navigation, accessibility, content structure</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, Next.js, Tailwind</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Type</p><p class="text-gray-600">UCI capstone project</p></div>
+          </div>
+          <a href="laguna.html" class="inline-block rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Case Study</a>
+        </div>
+        <div class="grid grid-cols-3 gap-4 self-center">
+          <img src="images/laguna/laguna1.png" alt="Laguna Screen 1" class="rounded-2xl shadow" />
+          <img src="images/laguna/laguna2.png" alt="Laguna Screen 2" class="mt-10 rounded-2xl shadow" />
+          <img src="images/laguna/laguna3.png" alt="Laguna Screen 3" class="rounded-2xl shadow" />
+        </div>
+      </div>
+    </article>
+
+    <!-- Doorway -->
+    <article id="doorway" class="mx-auto max-w-6xl overflow-hidden rounded-3xl bg-white p-8 shadow-xl md:p-12">
+      <div class="grid gap-10 md:grid-cols-2">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">UX / Product Concept</p>
+          <h3 class="mb-5 text-4xl font-bold">Doorway</h3>
+          <p class="mb-6 text-lg leading-relaxed text-gray-700">Doorway is a platform with a mission to bridge the gap in social connectivity. We aimed to create a digital space that not only encourages users to foster deeper social connections but also empowers them to take the initiative in reaching out to friends and family.</p>
+          <div class="mb-8 grid grid-cols-2 gap-4 text-sm">
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Role</p><p class="text-gray-600">UX / UI Designer</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Focus</p><p class="text-gray-600">User flow, interface structure</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, prototyping</p></div>
+            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Type</p><p class="text-gray-600">Portfolio project</p></div>
+          </div>
+          <a href="doorway.html" class="inline-block rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Case Study</a>
+        </div>
+        <div class="grid grid-cols-3 gap-4 self-center">
+          <img src="images/doorway/doorway1.png" alt="Doorway Screen 1" class="rounded-2xl shadow" />
+          <img src="images/doorway/doorway2.png" alt="Doorway Screen 2" class="mt-10 rounded-2xl shadow" />
+          <img src="images/doorway/doorway3.png" alt="Doorway Screen 3" class="rounded-2xl shadow" />
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact" class="px-6 py-20 text-center text-gray-900" style="background: linear-gradient(to bottom, #f3f4f6 0%, #e5e7eb 100%);">
+<h2 class="mb-4 text-4xl font-bold">Let’s work together!</h2>
+  <p class="mx-auto mb-8 max-w-xl text-gray-700">Interested in UX, technical support, and the people side of technology.</p>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="mailto:emand7206@gmail.com" class="inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white shadow-lg">Contact Me</a>
+    <a id="resume" href="resume.pdf" class="inline-block rounded-full border border-gray-900 px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white">View Resume</a>
+  </div>
+</footer>
+
+</body>
+</html>

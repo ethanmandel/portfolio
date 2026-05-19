@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laguna Ocean Foundation Case Study | Ethan Mandel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f3f4f6; }
+    .accent { color: #9A0002; }
+    .bg-accent { background-color: #9A0002; }
+    .case-study-media {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      box-shadow: 0 18px 45px rgba(0,0,0,.12);
+      background: #f3f4f6;
+    }
+    .case-study-nav { max-height: calc(100vh - 8rem); overflow-y: auto; }
+  </style>
+</head>
+<body class="font-sans text-gray-900">
+
+<!-- NAV -->
+<nav class="fixed top-0 z-50 w-full border-b border-black border-opacity-10 bg-white bg-opacity-70 backdrop-filter backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="index.html#top" class="text-xl font-semibold tracking-tight">ethan mandel</a>
+    <div class="hidden gap-8 text-sm font-medium md:flex">
+      <a href="index.html#about" class="hover:opacity-60">about</a>
+      <a href="index.html#projects" class="hover:opacity-60">projects</a>
+      <a href="index.html#resume" class="hover:opacity-60">resume</a>
+      <a href="index.html#contact" class="hover:opacity-60">contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="pt-32 pb-20" style="background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 60%, #ffffff 100%);">
+  <div class="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
+    <div>
+      <a href="index.html#projects" class="mb-8 inline-block text-sm font-semibold accent hover:opacity-70">← Back to projects</a>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500">Nonprofit Website Redesign</p>
+      <h1 class="mb-6 text-5xl font-bold leading-tight md:text-7xl">Laguna Ocean Foundation</h1>
+      <p class="max-w-xl text-xl leading-relaxed text-gray-700">
+        A redesigned educational website for tidepool visitors, focused on clearer trip planning, species discovery, tide information, and a more useful on-site experience through QR signage.
+      </p>
+      <div class="mt-8 grid max-w-xl grid-cols-2 gap-4 text-sm md:grid-cols-4">
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Role</p><p class="text-gray-600">UX / UI Designer</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Focus</p><p class="text-gray-600">Navigation, accessibility</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, Next.js</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Type</p><p class="text-gray-600">UCI capstone</p></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 self-center">
+      <img src="images/laguna/laguna1.png" alt="Laguna Screen 1" class="rounded-2xl shadow" />
+      <img src="images/laguna/laguna2.png" alt="Laguna Screen 2" class="mt-10 rounded-2xl shadow" />
+      <img src="images/laguna/laguna3.png" alt="Laguna Screen 3" class="rounded-2xl shadow" />
+    </div>
+  </div>
+</header>
+
+<!-- CASE STUDY -->
+<main class="bg-white px-6 py-20">
+        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+          <aside class="case-study-nav sticky top-28 h-fit self-start space-y-4 text-sm text-gray-600"><p class="font-bold text-gray-900">Case Study</p><a href="#overview" class="block hover:opacity-60">Overview</a><a href="#process" class="block hover:opacity-60">Process</a><a href="#outcome" class="block hover:opacity-60">Outcome</a></aside>
+          <div class="space-y-12 md:col-span-2">
+            <section id="overview"><h4 class="mb-4 text-3xl font-bold">Overview</h4><p class="text-lg leading-relaxed text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit velit eu arcu facilisis, id bibendum felis facilisis. Suspendisse potenti. Duis congue, mi vitae gravida luctus, est mi bibendum erat, vitae suscipit nibh ipsum a lorem.</p></section>
+            <section id="process"><h4 class="mb-4 text-3xl font-bold">Process</h4><p class="text-lg leading-relaxed text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Donec accumsan enim et tortor pulvinar, at sagittis libero faucibus.</p></section>
+            <section id="outcome"><h4 class="mb-4 text-3xl font-bold">Outcome</h4><p class="text-lg leading-relaxed text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum, purus eget luctus laoreet, metus massa porta magna, quis dictum augue arcu id erat.</p></section>
+          </div>
+        </div>
+</main>
+
+<!-- FOOTER -->
+<footer id="contact" class="px-6 py-20 text-center text-gray-900" style="background: linear-gradient(to bottom, #f3f4f6 0%, #e5e7eb 100%);">
+  <h2 class="mb-4 text-4xl font-bold">Let’s work together!</h2>
+  <p class="mx-auto mb-8 max-w-xl text-gray-700">Interested in UX, technical support, and the people side of technology.</p>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="mailto:emand7206@gmail.com" class="inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white shadow-lg">Contact Me</a>
+    <a id="resume" href="resume.pdf" class="inline-block rounded-full border border-gray-900 px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white">View Resume</a>
+  </div>
+</footer>
+
+</body>
+</html>

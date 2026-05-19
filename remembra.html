@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remembra Case Study | Ethan Mandel</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #f3f4f6; }
+    .accent { color: #9A0002; }
+    .bg-accent { background-color: #9A0002; }
+    .case-study-media {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 1.5rem;
+      box-shadow: 0 18px 45px rgba(0,0,0,.12);
+      background: #f3f4f6;
+    }
+    .case-study-nav { max-height: calc(100vh - 8rem); overflow-y: auto; }
+  </style>
+</head>
+<body class="font-sans text-gray-900">
+
+<!-- NAV -->
+<nav class="fixed top-0 z-50 w-full border-b border-black border-opacity-10 bg-white bg-opacity-70 backdrop-filter backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href="index.html#top" class="text-xl font-semibold tracking-tight">ethan mandel</a>
+    <div class="hidden gap-8 text-sm font-medium md:flex">
+      <a href="index.html#about" class="hover:opacity-60">about</a>
+      <a href="index.html#projects" class="hover:opacity-60">projects</a>
+      <a href="index.html#resume" class="hover:opacity-60">resume</a>
+      <a href="index.html#contact" class="hover:opacity-60">contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="pt-32 pb-20" style="background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 60%, #ffffff 100%);">
+  <div class="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
+    <div>
+      <a href="index.html#projects" class="mb-8 inline-block text-sm font-semibold accent hover:opacity-70">← Back to projects</a>
+      <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500">App Concept / UX Case Study</p>
+      <h1 class="mb-6 text-5xl font-bold leading-tight md:text-7xl">Remembra</h1>
+      <p class="max-w-xl text-xl leading-relaxed text-gray-700">
+        Leveraging music and technology to support memory, improve emotional well-being, and enhance quality of life.
+      </p>
+      <div class="mt-8 grid max-w-xl grid-cols-2 gap-4 text-sm md:grid-cols-4">
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Role</p><p class="text-gray-600">UX Lead</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Focus</p><p class="text-gray-600">Research, prototype</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, Expo Go</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Type</p><p class="text-gray-600">App concept</p></div>
+      </div>
+    </div>
+    <div class="grid grid-cols-3 gap-4 self-center">
+      <img src="images/remembra/Welcome.png" alt="Remembra Welcome Screen" class="rounded-2xl shadow" />
+      <img src="images/remembra/Set Up Selection.png" alt="Remembra Set Up Screen" class="mt-10 rounded-2xl shadow" />
+      <img src="images/remembra/Now Playing.png" alt="Remembra Now Playing screen" class="rounded-2xl shadow" />
+    </div>
+  </div>
+</header>
+
+<!-- CASE STUDY -->
+<main class="bg-white px-6 py-20">
+  <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+    <aside class="case-study-nav sticky top-28 hidden h-fit self-start space-y-4 text-sm text-gray-600 md:block">
+      <p class="font-bold text-gray-900">Remembra Case Study</p>
+      <a href="#overview" class="block hover:opacity-60">Overview</a>
+      <a href="#problem" class="block hover:opacity-60">Problem</a>
+      <a href="#features" class="block hover:opacity-60">Features</a>
+      <a href="#research" class="block hover:opacity-60">Research</a>
+      <a href="#user-friendly" class="block hover:opacity-60">User Friendly</a>
+      <a href="#personalization" class="block hover:opacity-60">Personalization</a>
+      <a href="#prototype" class="block hover:opacity-60">Prototype</a>
+      <a href="#presentation" class="block hover:opacity-60">Presentation</a>
+      <a href="#team" class="block hover:opacity-60">Team</a>
+      <a href="#app-development" class="block hover:opacity-60">App Development</a>
+      <a href="#takeaways" class="block hover:opacity-60">Takeaways</a>
+    </aside>
+
+    <div class="space-y-16 md:col-span-2">
+      <section id="overview">
+        <h2 class="mb-4 text-4xl font-bold">Overview:</h2>
+        <p class="text-lg leading-relaxed text-gray-700">
+          Leveraging music and technology to support memory, improve emotional well-being, and enhance quality of life.
+        </p>
+      </section>
+
+      <section id="problem">
+        <h2 class="mb-4 text-4xl font-bold">Problem:</h2>
+        <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+          <p>
+            Over 55 million individuals globally experience memory loss from Alzheimer's, dementia, and related cognitive disorders—a number expected to reach 139 million by 2050. With someone diagnosed every 3.2 seconds, traditional treatments fall short in addressing emotional and cognitive well-being.
+          </p>
+          <p>
+            Remembra combines the proven therapeutic benefits of music—clinically shown to delay cognitive decline and reduce depression—with advanced AI and wearable biosensor technology. Our personalized app learns from your emotional responses and preferences, curating an experience that reconnects you to cherished memories, enhances cognitive function, and uplifts your emotional health.
+          </p>
+        </div>
+      </section>
+
+      <section id="features">
+        <h2 class="mb-8 text-4xl font-bold">Features:</h2>
+        <div class="space-y-12">
+          <div>
+            <h3 class="mb-2 text-2xl font-bold">Personalized AI</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">Get music recommendations designed around your personal memories and preferences.</p>
+            <img src="images/remembra/remembra1.jpg" alt="Remembra Personalized AI" class="case-study-media" />
+          </div>
+          <div>
+            <h3 class="mb-2 text-2xl font-bold">User Friendly:</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">Intuitive and Simple Designed to be easily accessible by users of all ages.</p>
+            <img src="images/remembra/remembra2.jpg" alt="Remembra User Friendly" class="case-study-media" />
+          </div>
+          <div>
+            <h3 class="mb-2 text-2xl font-bold">Gameification</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">Test Your Memory and Turn everyday music therapy into playful memory challenges.</p>
+            <img src="images/remembra/remembra3.jpg" alt="Remembra Gameification" class="case-study-media" />
+          </div>
+          <div>
+            <h3 class="mb-2 text-2xl font-bold">Biosensors</h3>
+            <p class="mb-6 text-lg leading-relaxed text-gray-700">Real-time heart rate and activity tracking provide live feedback, ensuring each music session is continually refined for comfort and effectiveness.</p>
+            <img src="images/remembra/remembra4.jpg" alt="Remembra Biosensors" class="case-study-media" />
+          </div>
+        </div>
+      </section>
+
+      <section id="research">
+        <h2 class="mb-4 text-4xl font-bold">Research:</h2>
+        <p class="text-lg leading-relaxed text-gray-700">
+          Clinical research shows that music therapy can meaningfully improve the lives of those experiencing cognitive decline. Studies like Chu et al. (2014) have demonstrated that personalized music programs can reduce anxiety, elevate mood, and even slow short-term memory deterioration. Remembra builds on this foundation—combining the proven benefits of music therapy with the power of AI and biometric feedback. By tracking heart rate and engagement in real time, Remembra adapts to each user’s unique responses. The result? A dynamic, emotionally resonant experience that goes far beyond traditional therapy.
+        </p>
+      </section>
+
+      <section id="user-friendly">
+        <h2 class="mb-4 text-4xl font-bold">User Friendly:</h2>
+        <p class="text-lg leading-relaxed text-gray-700">
+          Remembra is designed with real-world users in mind—whether that’s a memory-impaired individual or a busy caregiver. The interface is intentionally simple, with large buttons, bold colors, and intuitive navigation tailored to older adults and those unfamiliar with technology. Caregivers can easily create playlists, monitor emotional responses through biosensor data, and tweak settings for optimal comfort. For more independent users, the app offers advanced features like gamified memory recall challenges and AI-generated playlists fine-tuned to their preferences. Therapy shouldn’t feel like work—it should feel like listening to your favorite song.
+        </p>
+      </section>
+
+      <section id="personalization">
+        <h2 class="mb-4 text-4xl font-bold">Personalization</h2>
+        <p class="text-lg leading-relaxed text-gray-700">
+          No two memories are alike, so why should music therapy be one-size-fits-all? Remembra’s AI learns from every interaction, adjusting recommendations based not just on musical preferences but also on real-time biosensor input like heart rate changes. It’s like having a therapist who knows your favorite artist and how you’re feeling. From “Guess the Song” memory games to a fine-tuned music diary feature, Remembra engages the brain through play, routine, and nostalgia. As you grow, the app evolves with you to keep therapy relevant and enjoyable.
+        </p>
+      </section>
+
+      <section id="prototype">
+        <h2 class="mb-4 text-4xl font-bold">Prototype</h2>
+        <h3 class="mb-4 text-2xl font-bold">Our High-Fidelity Prototype</h3>
+        <p class="mb-8 text-lg leading-relaxed text-gray-700">
+          Building on user feedback and iterative design, we refined Remembra into a fully interactive, visually cohesive high-fidelity model. This prototype captures our vision for a smooth, user-friendly experience—everything from AI-powered recommendations to intuitive music controls is on display here.
+        </p>
+        <div class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-100">
+          <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/syeJrnG2N4uixJ48zRxT2J/Remembra?content-scaling=fixed&kind=proto&node-id=3-2&page-id=0%3A1&scaling=scale-down&starting-point-node-id=3%3A2&embed-host=share" allowfullscreen class="h-96 w-full"></iframe>
+        </div>
+      </section>
+
+      <section id="presentation">
+        <h2 class="mb-4 text-4xl font-bold">Project Presentation</h2>
+        <div class="relative overflow-hidden rounded-3xl border border-gray-200 bg-gray-100" style="padding-top: 56.25%;">
+          <iframe class="absolute left-0 top-0 h-full w-full" src="https://www.youtube.com/embed/CVJLsJv5T9o?si=bOIQFGjPY04CIdSM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <section id="team">
+        <h2 class="mb-4 text-4xl font-bold">Team:</h2>
+        <div class="grid gap-4 text-lg leading-relaxed text-gray-700 md:grid-cols-2">
+          <div class="rounded-2xl bg-gray-100 p-5"><p class="font-bold text-gray-900">Bryan Cardona</p><p>Team Lead, Public Health Policy. School of Public Health</p></div>
+          <div class="rounded-2xl bg-gray-100 p-5"><p class="font-bold text-gray-900">Julia Chan</p><p>Product Lead, Public Health Sciences, School of Population & Public Health</p></div>
+          <div class="rounded-2xl bg-gray-100 p-5"><p class="font-bold text-gray-900">Ethan Mandel</p><p>UX Lead, Informatics, School of Information and Computer Sciences</p></div>
+          <div class="rounded-2xl bg-gray-100 p-5"><p class="font-bold text-gray-900">Diego Guzman</p><p>CTO, Informatics, School of Information and Computer Sciences</p></div>
+        </div>
+      </section>
+
+      <section id="app-development">
+        <h2 class="mb-4 text-4xl font-bold">App Development:</h2>
+        <p class="text-lg leading-relaxed text-gray-700">
+          Our Remembra music therapy application is built on a TypeScript and JavaScript foundation, ensuring robust type-checking and smoother collaboration across the codebase. The frontend leverages Expo Go for seamless development, while Firebase provides real-time data storage, user authentication, and serverless functionality. On the backend, Python scripts handle data processing and more advanced tasks like generating AI-driven music recommendations or managing biosensor data pipelines. By combining these technologies—TypeScript’s strong typing, Expo Go’s cross-platform ease, Firebase’s scalable backend, and Python’s flexibility—Remembra delivers a responsive, secure, and highly extensible music therapy experience for users.
+        </p>
+      </section>
+
+      <section id="takeaways">
+        <h2 class="mb-4 text-4xl font-bold">Takeaways:</h2>
+        <p class="text-lg leading-relaxed text-gray-700">[fill out]</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer id="contact" class="px-6 py-20 text-center text-gray-900" style="background: linear-gradient(to bottom, #f3f4f6 0%, #e5e7eb 100%);">
+  <h2 class="mb-4 text-4xl font-bold">Let’s work together!</h2>
+  <p class="mx-auto mb-8 max-w-xl text-gray-700">Interested in UX, technical support, and the people side of technology.</p>
+  <div class="flex flex-wrap justify-center gap-4">
+    <a href="mailto:emand7206@gmail.com" class="inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white shadow-lg">Contact Me</a>
+    <a id="resume" href="resume.pdf" class="inline-block rounded-full border border-gray-900 px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white">View Resume</a>
+  </div>
+</footer>
+
+</body>
+</html>
