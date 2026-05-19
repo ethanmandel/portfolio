@@ -17,8 +17,18 @@
       border-radius: 1.5rem;
       box-shadow: 0 18px 45px rgba(0,0,0,.12);
       background: #f3f4f6;
+      object-fit: cover;
     }
     .case-study-nav { max-height: calc(100vh - 8rem); overflow-y: auto; }
+    .caption { font-size: .875rem; color: #6b7280; margin-top: .75rem; }
+    .section-kicker { color: #9A0002; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .75rem; }
+    .info-card { border-radius: 1rem; background: #f3f4f6; padding: 1.25rem; }
+    .image-grid-2 { display: grid; gap: 1rem; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    .image-grid-3 { display: grid; gap: 1rem; grid-template-columns: repeat(1, minmax(0, 1fr)); }
+    @media (min-width: 768px) {
+      .image-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .image-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
   </style>
 </head>
 <body class="font-sans text-gray-900">
@@ -37,40 +47,307 @@
 </nav>
 
 <!-- HERO -->
-<header class="pt-32 pb-20" style="background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 60%, #ffffff 100%);">
+<header id="hero" class="pt-32 pb-20" style="background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 60%, #ffffff 100%);">
   <div class="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
     <div>
       <a href="index.html#projects" class="mb-8 inline-block text-sm font-semibold accent hover:opacity-70">← Back to projects</a>
       <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500">Nonprofit Website Redesign</p>
       <h1 class="mb-6 text-5xl font-bold leading-tight md:text-7xl">Laguna Ocean Foundation</h1>
       <p class="max-w-xl text-xl leading-relaxed text-gray-700">
-        A redesigned educational website for tidepool visitors, focused on clearer trip planning, species discovery, tide information, and a more useful on-site experience through QR signage.
+        Redesigning an educational tidepool exploration platform to improve usability, mobile accessibility, and visitor engagement for families, students, and beachgoers.
+      </p>
+      <p class="mt-5 max-w-xl text-lg leading-relaxed text-gray-700">
+        The project transformed an outdated and difficult-to-navigate experience into a modern educational platform for exploring Laguna Beach's coastal ecosystems through interactive content, clearer navigation, and responsive design.
       </p>
       <div class="mt-8 grid max-w-xl grid-cols-2 gap-4 text-sm md:grid-cols-4">
-        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Role</p><p class="text-gray-600">UX / UI Designer</p></div>
-        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Focus</p><p class="text-gray-600">Navigation, accessibility</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Role</p><p class="text-gray-600">Lead Dev / UX</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Timeline</p><p class="text-gray-600">10 Weeks</p></div>
+        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Team</p><p class="text-gray-600">Team Tidepool</p></div>
         <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, Next.js</p></div>
-        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Type</p><p class="text-gray-600">UCI capstone</p></div>
       </div>
     </div>
     <div class="grid grid-cols-3 gap-4 self-center">
-      <img src="images/laguna/laguna1.png" alt="Laguna Screen 1" class="rounded-2xl shadow" />
-      <img src="images/laguna/laguna2.png" alt="Laguna Screen 2" class="mt-10 rounded-2xl shadow" />
-      <img src="images/laguna/laguna3.png" alt="Laguna Screen 3" class="rounded-2xl shadow" />
+      <img src="images/laguna/final1.png" alt="Final Laguna homepage screen" class="rounded-2xl shadow" />
+      <img src="images/laguna/final2.png" alt="Final Laguna trip planning screen" class="mt-10 rounded-2xl shadow" />
+      <img src="images/laguna/final3.png" alt="Final Laguna species guide screen" class="rounded-2xl shadow" />
     </div>
   </div>
 </header>
 
 <!-- CASE STUDY -->
 <main class="bg-white px-6 py-20">
-        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
-          <aside class="case-study-nav sticky top-28 h-fit self-start space-y-4 text-sm text-gray-600"><p class="font-bold text-gray-900">Case Study</p><a href="#overview" class="block hover:opacity-60">Overview</a><a href="#process" class="block hover:opacity-60">Process</a><a href="#outcome" class="block hover:opacity-60">Outcome</a></aside>
-          <div class="space-y-12 md:col-span-2">
-            <section id="overview"><h4 class="mb-4 text-3xl font-bold">Overview</h4><p class="text-lg leading-relaxed text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin blandit velit eu arcu facilisis, id bibendum felis facilisis. Suspendisse potenti. Duis congue, mi vitae gravida luctus, est mi bibendum erat, vitae suscipit nibh ipsum a lorem.</p></section>
-            <section id="process"><h4 class="mb-4 text-3xl font-bold">Process</h4><p class="text-lg leading-relaxed text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Donec accumsan enim et tortor pulvinar, at sagittis libero faucibus.</p></section>
-            <section id="outcome"><h4 class="mb-4 text-3xl font-bold">Outcome</h4><p class="text-lg leading-relaxed text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi elementum, purus eget luctus laoreet, metus massa porta magna, quis dictum augue arcu id erat.</p></section>
+  <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+    <aside class="case-study-nav sticky top-28 hidden h-fit self-start space-y-4 text-sm text-gray-600 md:block">
+      <p class="font-bold text-gray-900">Laguna Case Study</p>
+      <a href="#overview" class="block hover:opacity-60">Overview</a>
+      <a href="#background" class="block hover:opacity-60">Background</a>
+      <a href="#problem" class="block hover:opacity-60">Problem</a>
+      <a href="#users" class="block hover:opacity-60">Users & Research</a>
+      <a href="#requirements" class="block hover:opacity-60">Requirements</a>
+      <a href="#flow" class="block hover:opacity-60">User Flow</a>
+      <a href="#exploration" class="block hover:opacity-60">Design Exploration</a>
+      <a href="#development" class="block hover:opacity-60">Development</a>
+      <a href="#challenges" class="block hover:opacity-60">Challenges</a>
+      <a href="#outcome" class="block hover:opacity-60">Final Outcome</a>
+      <a href="#reflection" class="block hover:opacity-60">Reflection</a>
+    </aside>
+
+    <div class="space-y-20 md:col-span-2">
+
+
+      <section id="background">
+        <p class="section-kicker mb-3">01 / Project Background</p>
+        <h2 class="mb-4 text-4xl font-bold">Project Background</h2>
+        <div class="space-y-5 text-lg leading-relaxed text-gray-700">
+          <p>Laguna Ocean Foundation partnered with our UC Irvine capstone team to redesign their existing educational website focused on Laguna Beach tidepools. The organization centers around environmental education, conservation awareness, and helping visitors safely explore marine ecosystems.</p>
+          <p>The existing site contained useful information, but the experience felt unfinished, difficult to navigate, and inconsistent across devices. Important content such as species information, tidepool locations, and tide schedules was either hard to locate or lacked visual engagement.</p>
+        </div>
+        <div class="mt-8 image-grid-2">
+          <img src="images/laguna/oldhero.jpg" alt="Old Laguna website hero screenshot" class="case-study-media" />
+          <img src="images/laguna/oldguide.jpg" alt="Old Laguna species guide screenshot" class="case-study-media" />
+          <img src="images/laguna/oldfaq.jpg" alt="Old Laguna FAQ screenshot" class="case-study-media" />
+          <img src="images/laguna/oldmap.jpg" alt="Old Laguna map screenshot" class="case-study-media" />
+        </div>
+        <p class="caption">Original site screens referenced in the project documentation.</p>
+        <div class="mt-8 space-y-5 text-lg leading-relaxed text-gray-700">
+          <p>Our team inherited both the previous codebase and existing project materials from an earlier capstone team. This meant balancing redesign work with understanding an already-established technical structure and adapting to evolving stakeholder feedback throughout development.</p>
+          <p>The redesign aimed to create a more engaging experience for educators, families, students, and visitors while improving usability across both desktop and mobile devices.</p>
+        </div>
+      </section>
+
+      <section id="problem">
+        <p class="section-kicker mb-3">02 / The Problem</p>
+        <h2 class="mb-4 text-4xl font-bold">The original site struggled with clarity, usability, and engagement.</h2>
+        <div class="space-y-5 text-lg leading-relaxed text-gray-700">
+          <p>The species guide lacked visual hierarchy and mobile usability, making it difficult for users to quickly identify marine life while onsite at the beach. Information related to tidepool locations, live tide data, and FAQs was fragmented across the experience, while the desktop interface felt visually incomplete and inconsistent.</p>
+          <p>The sponsor also emphasized the need for the platform to feel more modern and educational without overwhelming users with excessive information.</p>
+        </div>
+        <div class="mt-8 rounded-3xl bg-gray-100 p-6">
+          <h3 class="mb-4 text-2xl font-bold">Main usability issues</h3>
+          <ul class="grid gap-3 text-lg leading-relaxed text-gray-700 md:grid-cols-2">
+            <li>Limited interactivity throughout the site</li>
+            <li>Poor desktop optimization</li>
+            <li>Difficult navigation flow</li>
+            <li>Inconsistent visual design</li>
+            <li>Limited discoverability of educational resources</li>
+            <li>Non-responsive layouts in several areas</li>
+            <li>Lack of embedded live tide information</li>
+          </ul>
+        </div>
+        <p class="mt-6 text-lg leading-relaxed text-gray-700">Beyond aesthetics, the challenge was to redesign the platform in a way that better supported real visitor behaviors, whether someone was planning a trip in advance or actively exploring the tidepools onsite.</p>
+      </section>
+
+      <section id="users">
+        <p class="section-kicker mb-3">03 / Users & Research</p>
+        <h2 class="mb-4 text-4xl font-bold">Understanding who the site needed to serve</h2>
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">Through stakeholder discussions and persona development, we identified several core audiences: families planning beach trips, educators organizing student activities, students researching marine ecosystems, nature enthusiasts visiting the tidepools, and children exploring marine life interactively.</p>
+        <div class="space-y-10">
+          <div>
+            <h3 class="mb-3 text-2xl font-bold">Sarah - The Planner</h3>
+            <img src="images/laguna/sarah.png" alt="Sarah user persona" class="case-study-media mb-4" />
+            <p class="text-lg leading-relaxed text-gray-700">Sarah is an elementary school teacher planning a tidepool trip for her students. She needs clear navigation, safety information, tide schedules, and educational material that can be easily shared with children.</p>
+          </div>
+          <div>
+            <h3 class="mb-3 text-2xl font-bold">James - The Explorer</h3>
+            <img src="images/laguna/james.png" alt="James user persona" class="case-study-media mb-4" />
+            <p class="text-lg leading-relaxed text-gray-700">James is a marine biology student already onsite at the beach. He wants to quickly identify species using his phone while actively exploring the tidepools.</p>
+          </div>
+          <div>
+            <h3 class="mb-3 text-2xl font-bold">Lily - The Child User</h3>
+            <img src="images/laguna/lily.png" alt="Lily user persona" class="case-study-media mb-4" />
+            <p class="text-lg leading-relaxed text-gray-700">Lily is a younger visitor interested in discovering marine life through visuals and interactive exploration. Her experience emphasized simplicity, readability, and engagement.</p>
           </div>
         </div>
+        <p class="mt-8 text-lg leading-relaxed text-gray-700">A major insight from our research was that users arrived with very different goals depending on context. Some users needed trip-planning tools before arriving, while others needed fast access to species information in real time at the beach. This became the foundation for restructuring the site's navigation and user flow.</p>
+      </section>
+
+      <section id="requirements">
+        <p class="section-kicker mb-3">04 / Requirements</p>
+        <h2 class="mb-4 text-4xl font-bold">Turning stakeholder priorities into design direction</h2>
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">After meeting with stakeholders and reviewing previous project documentation, our team established a set of prioritized functional requirements that guided the redesign.</p>
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-3xl bg-gray-100 p-6">
+            <h3 class="mb-4 text-2xl font-bold">Critical features</h3>
+            <ul class="list-disc space-y-3 pl-5 text-lg leading-relaxed text-gray-700">
+              <li>Interactive species guide with expandable species information</li>
+              <li>Embedded live tidepool data directly on the website</li>
+              <li>Fully responsive mobile and desktop layouts</li>
+              <li>Clickable tidepool locations with access details</li>
+              <li>Expanded FAQ content</li>
+              <li>Improved visual consistency</li>
+              <li>Alphabetized species organization for easier browsing</li>
+            </ul>
+          </div>
+          <div class="rounded-3xl bg-gray-100 p-6">
+            <h3 class="mb-4 text-2xl font-bold">Non-functional goals</h3>
+            <ul class="list-disc space-y-3 pl-5 text-lg leading-relaxed text-gray-700">
+              <li>Simple and non-overwhelming information architecture</li>
+              <li>Fast-loading pages despite image-heavy content</li>
+              <li>Accessibility across devices</li>
+              <li>Maintainability for future Laguna Ocean Foundation updates</li>
+              <li>Reliable long-term deployment and uptime</li>
+            </ul>
+          </div>
+        </div>
+        <p class="mt-6 text-lg leading-relaxed text-gray-700">Rather than redesigning purely for visual polish, the project centered around solving concrete usability and accessibility issues identified through stakeholder feedback and user needs.</p>
+      </section>
+
+      <section id="flow">
+        <p class="section-kicker mb-3">05 / User Flow</p>
+        <h2 class="mb-4 text-4xl font-bold">Separating planning from exploration</h2>
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">One of the biggest structural changes in the redesign was simplifying the website's navigation into two primary pathways based on user intent.</p>
+        <img src="images/laguna/userflow.jpg" alt="Laguna user flow diagram" class="case-study-media mb-6" />
+        <div class="grid gap-6 md:grid-cols-2">
+          <div class="rounded-3xl bg-gray-100 p-6">
+            <h3 class="mb-3 text-2xl font-bold">Adventure Guide</h3>
+            <p class="mb-3 text-gray-700">For users planning a trip.</p>
+            <ul class="list-disc space-y-2 pl-5 text-gray-700"><li>Tidepool maps</li><li>Live tide schedules</li><li>Marine Protected Area information</li><li>Trip preparation resources</li></ul>
+          </div>
+          <div class="rounded-3xl bg-gray-100 p-6">
+            <h3 class="mb-3 text-2xl font-bold">Species Guide</h3>
+            <p class="mb-3 text-gray-700">For users already exploring onsite.</p>
+            <ul class="list-disc space-y-2 pl-5 text-gray-700"><li>Marine life identification</li><li>Expandable species cards</li><li>Visual learning</li><li>Faster mobile interaction</li></ul>
+          </div>
+        </div>
+        <p class="mt-6 text-lg leading-relaxed text-gray-700">Separating these flows created a clearer mental model for users and reduced the amount of information competing for attention at once. The updated flow also became the foundation for our personas, wireframes, and final interface decisions.</p>
+      </section>
+
+      <section id="exploration">
+        <p class="section-kicker mb-3">06 / Design Exploration</p>
+        <h2 class="mb-4 text-4xl font-bold">Iterating through layout, navigation, and visual direction</h2>
+        <p class="mb-8 text-lg leading-relaxed text-gray-700">The design process evolved heavily throughout the project due to iterative sponsor feedback and changing visual direction. Our team explored multiple homepage layouts, FAQ structures, species guide interfaces, and navigation systems before arriving at the final experience.</p>
+
+        <div class="space-y-14">
+          <div>
+            <h3 class="mb-4 text-2xl font-bold">Low-fidelity species guide wireframes</h3>
+            <div class="image-grid-2">
+              <img src="images/laguna/lofispecies.png" alt="Low fidelity species guide wireframe" class="case-study-media" />
+              <img src="images/laguna/lofispecies2.png" alt="Low fidelity species guide wireframe variation" class="case-study-media" />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-2xl font-bold">Alternate FAQ layouts</h3>
+            <div class="image-grid-3">
+              <img src="images/laguna/newfaq.jpg" alt="FAQ redesign version one" class="case-study-media" />
+              <img src="images/laguna/newfaq1.jpg" alt="FAQ redesign version two" class="case-study-media" />
+              <img src="images/laguna/newfaq2.png" alt="FAQ redesign version three" class="case-study-media" />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-2xl font-bold">Homepage redesign drafts</h3>
+            <div class="image-grid-2">
+              <img src="images/laguna/newhero.jpg" alt="Homepage redesign desktop draft" class="case-study-media" />
+              <img src="images/laguna/herohifi.png" alt="Homepage high fidelity mobile draft" class="case-study-media" />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-2xl font-bold">Interactive map concepts</h3>
+            <div class="image-grid-2">
+              <img src="images/laguna/hifilocation.jpg" alt="High fidelity location screen" class="case-study-media" />
+              <img src="images/laguna/hifilocationmap.jpg" alt="High fidelity location map screen" class="case-study-media" />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-2xl font-bold">Plan Your Trip iterations</h3>
+            <div class="image-grid-2">
+              <img src="images/laguna/planyourtriphifi.png" alt="Plan Your Trip high fidelity screen" class="case-study-media" />
+              <img src="images/laguna/planyourtriphifi2.png" alt="Plan Your Trip high fidelity second screen" class="case-study-media" />
+            </div>
+          </div>
+
+          <div>
+            <h3 class="mb-4 text-2xl font-bold">Species guide high-fidelity exploration</h3>
+            <div class="image-grid-3">
+              <img src="images/laguna/specieshifi.png" alt="Species guide high fidelity screen one" class="case-study-media" />
+              <img src="images/laguna/specieshifi2.png" alt="Species guide high fidelity screen two" class="case-study-media" />
+              <img src="images/laguna/specieshifi3.png" alt="Species guide high fidelity screen three" class="case-study-media" />
+              <img src="images/laguna/specieshifi4.png" alt="Species guide high fidelity screen four" class="case-study-media" />
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-8 text-lg leading-relaxed text-gray-700">The species guide became one of the most heavily iterated portions of the site. We explored different organizational methods, popup interactions, dropdown systems, and visual layouts to improve usability without overwhelming users. Figma served as both a collaborative planning tool and a way to quickly iterate based on sponsor critique before implementation.</p>
+      </section>
+
+      <section id="development">
+        <p class="section-kicker mb-3">07 / Development</p>
+        <h2 class="mb-4 text-4xl font-bold">Translating Figma into a working site</h2>
+        <p class="mb-6 text-lg leading-relaxed text-gray-700">A major portion of the project involved translating high-fidelity designs into a fully functional React and Next.js website.</p>
+        <div class="rounded-3xl bg-gray-100 p-6">
+          <h3 class="mb-4 text-2xl font-bold">Development work included</h3>
+          <ul class="grid gap-3 text-lg leading-relaxed text-gray-700 md:grid-cols-2">
+            <li>Building responsive layouts for mobile and desktop</li>
+            <li>Implementing interactive species cards</li>
+            <li>Embedding live tidepool widgets directly into the site</li>
+            <li>Creating expandable location information</li>
+            <li>Improving accessibility and keyboard navigation</li>
+            <li>Maintaining visual consistency across pages</li>
+          </ul>
+        </div>
+        <div class="mt-8 space-y-5 text-lg leading-relaxed text-gray-700">
+          <p>One of the primary implementation focuses was the interactive species guide, including alphabetized organization, expandable popup cards, improved imagery, better mobile usability, and keyboard event handling for accessibility.</p>
+          <p>Because the project inherited an existing codebase, development also involved understanding prior architectural decisions while restructuring portions of the frontend to support the redesigned experience. The project ultimately became a strong balance between UX thinking and frontend execution.</p>
+        </div>
+      </section>
+
+      <section id="challenges">
+        <p class="section-kicker mb-3">08 / Challenges</p>
+        <h2 class="mb-4 text-4xl font-bold">Working through changing feedback and collaboration friction</h2>
+        <div class="space-y-5 text-lg leading-relaxed text-gray-700">
+          <p>One of the biggest challenges throughout the project was adapting to evolving stakeholder feedback while development was already underway. Several layouts and design directions changed mid-sprint after additional sponsor discussions, which required rapid iteration and restructuring of both designs and implemented components.</p>
+          <p>Our team also faced technical collaboration challenges early in development, particularly surrounding Git workflows and version control management. Since several team members were unfamiliar with collaborative Git processes, there was an initial learning curve involving branch management, pull requests, merge conflicts, and synchronizing frontend changes.</p>
+          <p>Another challenge involved balancing desktop and mobile experiences simultaneously. Certain layouts that worked well on mobile initially felt visually weak on desktop and required substantial redesign work later in the process.</p>
+          <p>Despite these challenges, the project strengthened our ability to collaborate, adapt quickly, and maintain progress within a real-world stakeholder environment.</p>
+        </div>
+      </section>
+
+      <section id="outcome">
+        <p class="section-kicker mb-3">09 / Final Outcome</p>
+        <h2 class="mb-4 text-4xl font-bold">A more cohesive and engaging educational experience</h2>
+        <p class="mb-8 text-lg leading-relaxed text-gray-700">The final redesign delivered a significantly more cohesive and engaging experience for Laguna Ocean Foundation visitors.</p>
+        <div class="image-grid-3">
+          <img src="images/laguna/final1.png" alt="Final Laguna screen one" class="case-study-media" />
+          <img src="images/laguna/final2.png" alt="Final Laguna screen two" class="case-study-media" />
+          <img src="images/laguna/final3.png" alt="Final Laguna screen three" class="case-study-media" />
+          <img src="images/laguna/final4.png" alt="Final Laguna screen four" class="case-study-media" />
+          <img src="images/laguna/final5.png" alt="Final Laguna screen five" class="case-study-media" />
+          <img src="images/laguna/final6.png" alt="Final Laguna screen six" class="case-study-media" />
+        </div>
+        <div class="mt-8 rounded-3xl bg-gray-100 p-6">
+          <h3 class="mb-4 text-2xl font-bold">Key improvements</h3>
+          <ul class="grid gap-3 text-lg leading-relaxed text-gray-700 md:grid-cols-2">
+            <li>Fully redesigned responsive interface</li>
+            <li>Improved navigation flow</li>
+            <li>Interactive species guide</li>
+            <li>Embedded live tidepool charts</li>
+            <li>Clickable tidepool location system</li>
+            <li>Expanded FAQ content</li>
+            <li>Improved visual consistency across all pages</li>
+          </ul>
+        </div>
+        <div class="mt-6 space-y-5 text-lg leading-relaxed text-gray-700">
+          <p>The updated platform created a clearer separation between trip planning and species exploration while making educational content easier to discover and interact with.</p>
+          <p>The redesign also better aligned with the foundation's educational mission by creating a more approachable and visually engaging experience for families, students, and beach visitors.</p>
+          <p>Most importantly, the project transformed the website from an unfinished informational resource into a more polished educational platform capable of supporting real-world visitor experiences.</p>
+        </div>
+      </section>
+
+      <section id="reflection">
+        <p class="section-kicker mb-3">10 / Reflection</p>
+        <h2 class="mb-4 text-4xl font-bold">What I learned</h2>
+        <div class="space-y-5 text-lg leading-relaxed text-gray-700">
+          <p>This project taught me how much real-world UX work depends on adaptability, collaboration, and communication, not just visual design.</p>
+          <p>Working with a live stakeholder meant balancing feedback, technical constraints, shifting priorities, and development timelines simultaneously. It pushed me to think beyond designing screens and instead focus on how users actually move through information in different contexts.</p>
+          <p>I also gained valuable experience bridging design and frontend implementation. Moving directly from Figma prototypes into React development helped me better understand how design systems, responsiveness, and interaction decisions translate into production environments.</p>
+          <p>Most importantly, the project reinforced the importance of iteration. Many of our strongest solutions came from revisiting earlier ideas, responding to critique, and refining the experience over time rather than trying to perfect everything immediately.</p>
+        </div>
+      </section>
+    </div>
+  </div>
 </main>
 
 <!-- FOOTER -->
