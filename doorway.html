@@ -4,302 +4,314 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Doorway Case Study | Ethan Mandel</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
-  <style>
-    html { scroll-behavior: smooth; }
-    body { background: #f3f4f6; }
-    .accent { color: #9A0002; }
-    .bg-accent { background-color: #9A0002; }
-    .case-study-media {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 1.5rem;
-      box-shadow: 0 18px 45px rgba(0,0,0,.12);
-      background: #f3f4f6;
-    }
-    .case-study-nav { max-height: calc(100vh - 8rem); overflow-y: auto; }
-
-    .section-kicker {
-      color: #9A0002;
-      font-weight: 700;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      font-size: .75rem;
-    }
-  </style>
+  <meta name="description" content="Doorway: a social connection app concept that helps people reach out, feel available, and maintain stronger relationships. UX case study by Ethan Mandel." />
+  <meta property="og:title" content="Doorway Case Study | Ethan Mandel" />
+  <meta property="og:description" content="Nudging people to reach out first." />
+  <meta property="og:image" content="https://mandelethan.com/images/home/og.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/site.css?v=2" />
+  <link rel="stylesheet" href="css/case-study.css?v=2" />
 </head>
-<body class="font-sans text-gray-900">
+<body>
 
-<!-- NAV -->
-<nav class="fixed top-0 z-50 w-full border-b border-black border-opacity-10 bg-white bg-opacity-70 backdrop-filter backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="index.html#top" class="text-xl font-semibold tracking-tight">ethan mandel</a>
-    <div class="hidden gap-8 text-sm font-medium md:flex">
-      <a href="index.html#about" class="hover:opacity-60">about</a>
-      <a href="index.html#projects" class="hover:opacity-60">projects</a>
-      <a href="index.html#resume" class="hover:opacity-60">resume</a>
-      <a href="index.html#contact" class="hover:opacity-60">contact</a>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a href="index.html" class="nav__logo">ethan mandel</a>
+    <div class="nav__links">
+      <a href="index.html#about">about me</a>
+      <a href="index.html#work" aria-current="page">my work</a>
+      <a href="#contact">contact</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<header class="pt-32 pb-20" style="background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 60%, #ffffff 100%);">
-  <div class="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2 md:items-center">
+<header class="cs-hero">
+  <div class="wrap">
     <div>
-      <a href="index.html#projects" class="mb-8 inline-block text-sm font-semibold accent hover:opacity-70">← Back to projects</a>
-      <p class="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-500">UX / Product Concept</p>
-      <h1 class="mb-6 text-5xl font-bold leading-tight md:text-7xl">Doorway</h1>
-      <p class="max-w-xl text-xl leading-relaxed text-gray-700">
-        A social connection platform concept designed to help people reach out, feel available, and maintain stronger relationships through simple interaction patterns.
-      </p>
-      <div class="mt-8 grid max-w-xl grid-cols-2 gap-4 text-sm md:grid-cols-4">
-        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Role</p><p class="text-gray-600">UX / UI Designer</p></div>
-        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Focus</p><p class="text-gray-600">User flow</p></div>
-        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Tools</p><p class="text-gray-600">Figma</p></div>
-        <div class="rounded-2xl bg-white p-4 shadow"><p class="font-bold">Type</p><p class="text-gray-600">Portfolio project</p></div>
-      </div>
+      <a href="index.html#work" class="back"><span aria-hidden="true">←</span> All work</a>
+      <p class="eyebrow">UX / product concept</p>
+      <h1>Doorway</h1>
+      <p class="cs-hero__lede">A social connection platform concept designed to help people reach out, feel available, and maintain stronger relationships through simple interaction patterns.</p>
     </div>
-    <div class="grid grid-cols-3 gap-4 self-center">
-      <img src="images/doorway/doorway1.png" alt="Doorway Screen 1" class="rounded-2xl shadow" />
-      <img src="images/doorway/doorway2.png" alt="Doorway Screen 2" class="mt-10 rounded-2xl shadow" />
-      <img src="images/doorway/doorway3.png" alt="Doorway Screen 3" class="rounded-2xl shadow" />
+    <div class="lineup" aria-hidden="true">
+      <img src="images/home/cards/doorway3.webp" alt="" />
+      <img src="images/home/cover-doorway.webp" alt="" />
+      <img src="images/home/cards/doorway4.webp" alt="" />
     </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>UX / UI Designer</dd></div>
+      <div><dt>Focus</dt><dd>User flow</dd></div>
+      <div><dt>Tools</dt><dd>Figma</dd></div>
+      <div><dt>Type</dt><dd>Portfolio project</dd></div>
+    </dl>
   </div>
 </header>
 
 <!-- CASE STUDY -->
-<main class="bg-white px-6 py-20">
-        <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
-          <aside class="case-study-nav sticky top-28 hidden h-fit self-start space-y-4 text-sm text-gray-600 md:block">
-            <p class="font-bold text-gray-900">Doorway Case Study</p>
-            <a href="#doorway-project-overview" class="block hover:opacity-60">Overview</a>
-            <a href="#doorway-problem-statement" class="block hover:opacity-60">Problem</a>
-            <a href="#doorway-design-challenge" class="block hover:opacity-60">Challenge</a>
-            <a href="#doorway-interviewing" class="block hover:opacity-60">Research</a>
-            <a href="#doorway-affinity-diagram" class="block hover:opacity-60">Affinity Diagram</a>
-            <a href="#doorway-design-phase" class="block hover:opacity-60">Design Phase</a>
-            <a href="#doorway-paper-sketches" class="block hover:opacity-60">Sketches</a>
-            <a href="#doorway-low-fidelity-wireframes" class="block hover:opacity-60">Wireframes</a>
-            <a href="#doorway-high-fidelity-prototype" class="block hover:opacity-60">Prototype</a>
-            <a href="#doorway-usability-evaluation" class="block hover:opacity-60">Testing</a>
-            <a href="#doorway-final-design" class="block hover:opacity-60">Final Design</a>
-            <a href="#doorway-project-link" class="block hover:opacity-60">Prototype Link</a>
-            <a href="#doorway-takeaways" class="block hover:opacity-60">Takeaways</a>
-          </aside>
+<main class="cs-body section">
+  <div class="wrap">
+    <nav class="toc" aria-label="Case study contents">
+      <p>Contents</p>
+      <a href="#overview">Overview</a>
+      <a href="#problem">Problem</a>
+      <a href="#challenge">Design challenge</a>
+      <a href="#research">Research</a>
+      <a href="#affinity">Affinity diagram</a>
+      <a href="#design">Design phase</a>
+      <a href="#sketches">Paper sketches</a>
+      <a href="#wireframes">Wireframes</a>
+      <a href="#hifi">High-fidelity prototype</a>
+      <a href="#testing">Testing</a>
+      <a href="#final">Final design</a>
+      <a href="#prototype">Prototype</a>
+    </nav>
 
-          <div class="space-y-14 md:col-span-2">
-            <section id="doorway-project-overview">
-              <p class="section-kicker mb-3">01 / Overview</p>
-              <h2 class="mb-4 text-4xl font-bold">Project Overview</h2>
-              <p class="text-lg leading-relaxed text-gray-700">
-                Doorway is a platform with a mission to bridge the gap in social connectivity. We aimed to create a digital space that not only encourages users to foster deeper social connections but also empowers them to take the initiative in reaching our to friends and family.
-              </p>
-            </section>
+    <div class="cs-content">
+      <section id="overview" class="cs-section">
+        <p class="eyebrow">01 — Overview</p>
+        <h2 class="h2">Project overview</h2>
+        <div class="prose">
+          <p>Doorway is a platform with a mission to bridge the gap in social connectivity. We aimed to create a digital space that not only encourages people to foster deeper social connections but also empowers them to take the initiative in reaching out to friends and family.</p>
+        </div>
+      </section>
 
-            <section id="doorway-problem-statement">
-              <p class="section-kicker mb-3">02 / Problem Statement</p>
-              <h2 class="mb-4 text-4xl font-bold">Problem Statement</h2>
-              <p class="text-lg leading-relaxed text-gray-700">
-                How might we develop a space that facilitates stronger social connections and encourages taking the initiative to reach out to friends and family?
-              </p>
-            </section>
+      <section id="problem" class="cs-section">
+        <p class="eyebrow">02 — Problem statement</p>
+        <p class="quote">How might we develop a space that facilitates stronger social connections and encourages taking the initiative to reach out to friends and family?</p>
+      </section>
 
-            <section id="doorway-design-challenge">
-              <p class="section-kicker mb-3">03 / Design Challenge</p>
-              <h2 class="mb-4 text-4xl font-bold">Design Challenge</h2>
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                Our project began with the aim of developing a digital space to support mental wellness among friends and family, particularly over long distances. As we progressed through the design process, insights from our research and interviews highlighted a preference among potential users for a platform centered on fostering social connections as a means to support mental wellness. This realization / feedback was pivotal, leading us to refine our focus and transition from directly addressing mental wellness issues to enhancing mental wellness indirectly through encouraging conversations and creating a social environment where users feel secure in sharing their mental health journeys.
-              </p>
-              <ol class="list-decimal space-y-3 pl-6 text-lg leading-relaxed text-gray-700">
-                <li><span class="font-semibold text-gray-900">User Engagement:</span> Creating a platform that users would consistently use (considering the sensitive nature of mental wellness conversations)</li>
-                <li><span class="font-semibold text-gray-900">Balance Functionality with Simplicity:</span> Integrating meaningful features that promote social connectivity without overwhelming the user interface.</li>
-                <li><span class="font-semibold text-gray-900">Privacy:</span> Creating a secure space for users to share comfortably without fear of judgement.</li>
-              </ol>
-            </section>
+      <section id="challenge" class="cs-section">
+        <p class="eyebrow">03 — Design challenge</p>
+        <h2 class="h2">From long distance to mental wellness</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>Our project began with the aim of developing a digital space to support mental wellness among friends and family, particularly over long distances. As we progressed, insights from research and interviews showed that potential users preferred a platform centered on fostering social connection as a way to support mental wellness.</p>
+            <p>That feedback was pivotal. We refined our focus from directly addressing mental wellness to supporting it indirectly, by encouraging conversation and creating a social environment where people feel secure sharing their mental health journeys.</p>
+          </div>
+          <dl class="rows">
+            <div><dt>User engagement</dt><dd>Creating a platform people would consistently use, given the sensitive nature of mental wellness conversations</dd></div>
+            <div><dt>Functionality vs. simplicity</dt><dd>Integrating meaningful features that promote connection without overwhelming the interface</dd></div>
+            <div><dt>Privacy</dt><dd>A secure space where people can share comfortably without fear of judgement</dd></div>
+          </dl>
+        </div>
+      </section>
 
-            <section id="doorway-interviewing">
-              <p class="section-kicker mb-3">04 / Research</p>
-              <h2 class="mb-4 text-4xl font-bold">Interviewing</h2>
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                As a team we each conducted two unique interviews, totaling 10 participants. Originally, our problem statement aimed at bridging connections between individuals over long distances. However, as we engaged in conversations with our friends, family, and peers, the focus of our discussions naturally shifted form long-distance connections to more immediate concerns surrounding personal well-being.
-              </p>
-              <ul class="list-disc space-y-3 pl-6 text-lg leading-relaxed text-gray-700">
-                <li>“I wish there was a way for people to reach out for me to see that I’m just sitting online on my phone so I can know I can tap into them and they’re active and available”</li>
-                <li>“A person to listen to my struggles was a good example of support. Someone to just be there for me so I didn't feel alone and empathize with me.”</li>
-                <li>“[When] we’re at a level where we can be vulnerable with each other … it makes me feel like I can share my stories and emotions at that moment. It connects our souls”</li>
-                <li>“I’m rarely the one to reach out first…usually wait for someone to text first”</li>
-                <li>“[I] don't want to drain others with personal feelings all the time”</li>
-              </ul>
-            </section>
-
-            <section id="doorway-affinity-diagram">
-              <p class="section-kicker mb-3">05 / Affinity Diagram</p>
-              <h2 class="mb-4 text-4xl font-bold">Affinity Diagram</h2>
-              <img src="images/doorway/affinity.png" alt="doorway affinity" class="case-study-media mb-6" />
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                In order to get a better understanding of the problem, we turned to an affinity diagram to collate and analyze the insights gathered from each of our interviews. This method allowed us to visually organize the data and identify common themes and ideas that emerged across participants feedback. We uncovered overarching themes that resonated with our user base:
-              </p>
-              <ul class="list-disc space-y-4 pl-6 text-lg leading-relaxed text-gray-700">
-                <li><span class="font-semibold text-gray-900">Value of Support in Stressful Times:</span> Support during high-pressure or stressful times is appreciated
-                  <ul class="list-circle mt-2 pl-6"><li>Listening and “just being there”</li></ul>
-                </li>
-                <li><span class="font-semibold text-gray-900">Reciprocated Support:</span> We discovered that individuals are more inclined to engage and reciprocate support when someone reaches out first. This insight points to the importance of designing features that encourage proactive outreach among users.
-                  <ul class="list-circle mt-2 pl-6"><li>It’s impactful when a loved one takes the initiative to offer support</li></ul>
-                </li>
-              </ul>
-              <p class="mt-6 text-lg leading-relaxed text-gray-700">
-                Reflecting on the interview process, it became clear that our project needed a shift in direction. The initial focus on bridging connections between long-distance friends and family didn’t address the broader issue of mental wellness. Shifting our aim towards enhancing mental well-being through improved social interactions became a clearer more impactful goal.
-              </p>
-            </section>
-
-            <section id="doorway-design-phase">
-              <p class="section-kicker mb-3">06 / Design Phase</p>
-              <h2 class="mb-4 text-4xl font-bold">Design Phase</h2>
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                Creating user personas helped us visualize our target users' needs and behaviors, guiding the development of storyboards that illustrated potential user interactions with our app.
-              </p>
-              <img src="images/doorway/personas.png" alt="doorway persona" class="case-study-media mb-6" />
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                Our design phase was iterative, anchored by the insights gathered from user feedback. We transitioned from low-fidelity paper sketches, which laid out the basic structure and flow of our app, to mid-fidelity prototypes that introduced functional elements and interaction design, to a high-fidelity prototype that polished the interface.
-              </p>
-              <ol class="list-decimal space-y-3 pl-6 text-lg leading-relaxed text-gray-700">
-                <li>Low-fidelity Paper Sketches</li>
-                <li>Mid-fidelity Prototype</li>
-                <li>High-fidelity Prototype</li>
-              </ol>
-            </section>
-
-            <section id="doorway-paper-sketches">
-              <p class="section-kicker mb-3">07 / Paper Sketches</p>
-              <h2 class="mb-4 text-4xl font-bold">Paper Sketches</h2>
-              <img src="images/doorway/sketches.jpg" alt="doorway sketch" class="case-study-media mb-6" />
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                At this stage, our design was heavily inspired by social apps such as Locket, which we covered in our competitive analysis.
-              </p>
-              <ul class="list-disc space-y-4 pl-6 text-lg leading-relaxed text-gray-700">
-                <li><span class="font-semibold text-gray-900">Lock screen Notifications:</span> The notification informs users about their social circles presence without opening the app, which helps foster more spontaneous conversations and create an environment that supports talking.</li>
-                <li><span class="font-semibold text-gray-900">Widgets:</span> This concept introduces a personalized widget that seamlessly integrates with your smartphone's home screen, offering a visual snapshot of your friends' current activities.</li>
-                <li><span class="font-semibold text-gray-900">Home Page:</span> The home screen was designed to streamline social interactions by displaying contacts with clear indicators of their availability. At a glance, users can see who is online with green dots for available friends and grey dots for those currently unavailable.</li>
-              </ul>
-            </section>
-
-            <section id="doorway-low-fidelity-wireframes">
-              <p class="section-kicker mb-3">08 / Wireframes</p>
-              <h2 class="mb-4 text-4xl font-bold">Low-fidelity Wireframes</h2>
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                Kaila Long and I spent hours brainstorming at school, exchanging and refining ideas until we landed on a concept that truly sparked our interest. The metaphor of 'doors' emerged as a focal point, inspiring us to develop our project around this central theme
-              </p>
-              <img src="images/doorway/midfi.jpg" alt="doorway MidFi" class="case-study-media mb-6" />
-              <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                <div><p class="font-semibold text-gray-900">Home Page</p><p>- The landing page/home menu screen enables users to quickly see the status of their friends added to the platform. They can see their friends’ doors, as well as who has knocked/left a message on their door.</p></div>
-                <div><p class="font-semibold text-gray-900">My Door</p><p>- Users will be able to customize their door to make interactions more enjoyable and light-hearted.</p></div>
-              </div>
-              <img src="images/doorway/midfi2.jpg" alt="doorway midfi2" class="case-study-media my-6" />
-              <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                <div><p class="font-semibold text-gray-900">Viewing Door</p><p>- Selecting a user's doors displays the customized door of the user. They are presented with an option to knock on the door and leave a note in case they have something short to add. Users will also be shown the status of a user door via visual indicators (EX. Setting your door as “open” displays your Door ajar)</p></div>
-                <div><p class="font-semibold text-gray-900">History Tab</p><p>- The history tab will allow users to see what doors their friends have knocked on. This allows users to keep better track of those who reached out to them and respond to them when they have time. It additionally serves to boost group connectivity and explore socializing based on friends' activities.</p></div>
-              </div>
-            </section>
-
-            <section id="doorway-high-fidelity-prototype">
-              <p class="section-kicker mb-3">09 / High Fidelity Prototype</p>
-              <h2 class="mb-4 text-4xl font-bold">High Fidelity Prototype</h2>
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                Kaila Long played a pivotal role in developing our initial high-fidelity prototype. Her expertise in Figma helped translate the team's ideas into a workable prototype.
-              </p>
-              <img src="images/doorway/firsthifi.jpg" alt="doorway hifi" class="case-study-media mb-6" />
-              <p class="mb-4 text-lg leading-relaxed text-gray-700">The initial prototype consisted of:</p>
-              <ul class="list-disc space-y-3 pl-6 text-lg leading-relaxed text-gray-700">
-                <li>Landing Page</li>
-                <li>Home Page</li>
-                <li>My Door</li>
-                <li>History Tab</li>
-              </ul>
-            </section>
-
-            <section id="doorway-usability-evaluation">
-              <p class="section-kicker mb-3">10 / Testing</p>
-              <h2 class="mb-4 text-4xl font-bold">Usability Evaluation</h2>
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                In order to refine the user experience I conducted a mini usability evaluation with my friend/roommate. I created a list of tasks such as sending a knock, viewing your door, updating your status, and responding to a knock.
-              </p>
-              <p class="mb-3 text-lg font-semibold text-gray-900">Notable Findings:</p>
-              <ul class="mb-6 list-disc space-y-3 pl-6 text-lg leading-relaxed text-gray-700">
-                <li><span class="font-semibold text-gray-900">Friends List and Settings:</span> The absence of a visible friends list and a clearly defined settings page was a critical issues.</li>
-                <li><span class="font-semibold text-gray-900">Visual Communication:</span> The metaphor of 'open' versus 'closed' doors required clearer visual cues to convey their intended meaning effectively.</li>
-              </ul>
-              <p class="mb-3 text-lg font-semibold text-gray-900">Proposed Adjustments:</p>
-              <ul class="mb-6 list-disc space-y-3 pl-6 text-lg leading-relaxed text-gray-700">
-                <li><span class="font-semibold text-gray-900">Notification Management:</span> Tailoring notification behavior based on the 'door's status—offering a passive note-leaving feature for closed doors and active notifications for open doors.</li>
-                <li>Implement a system where a closed door does not trigger notifications but allows users to see notes left by others once the app is reopened.</li>
-                <li>Ensure an open door enables notifications to indicate active connection attempts.</li>
-                <li>Change the interaction for a closed door</li>
-              </ul>
-              <p class="text-lg leading-relaxed text-gray-700">
-                This usability evaluation was instrumental in identifying both the strengths and areas for improvement within our high-fidelity prototype. The feedback provided a clear direction for refining our interface, ensuring that future iterations will offer an even more intuitive and engaging user experience.
-              </p>
-            </section>
-
-            <section id="doorway-final-design">
-              <p class="section-kicker mb-3">11 / Final Design</p>
-              <h2 class="mb-4 text-4xl font-bold">Final Design</h2>
-              <img src="images/doorway/finalscreenshots.jpg" alt="doorway final" class="case-study-media mb-6" />
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                Our final design underwent significant evolution, drawing on insights from peer feedback and usability evaluations of our earlier high-fidelity prototype. A crucial addition was a screen facilitating the addition of neighbors, addressing a gap identified in the prior version. Moreover, we transformed the 'knock' function into a tangible button on the door itself, represented by a hand emoticon. This adjustment enabled us to integrate statuses directly beneath users' doors, enriching the interface with more intuitive and interactive elements.
-              </p>
-              <img src="images/doorway/storyreply.jpg" alt="doorway storyreply" class="case-study-media mb-6" />
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                We developed an alternative viewing mode for doors, organizing them into a grid layout instead of a sliding carousel, and introduced popup menus for facilitating user interactions.
-              </p>
-              <img src="images/doorway/sendingknock.jpg" alt="doorway sendingknock" class="case-study-media mb-6" />
-              <p class="mb-6 text-lg leading-relaxed text-gray-700">
-                To resolve the ambiguity surrounding closed versus open doors highlighted during usability testing, we introduced an alternative popup notification. This notification informs users when a door is closed and suggests knocking later or opting to receive a notification when the door opens. This feature is designed to enhance social connectivity in a manner that is engaging yet respectful of user preferences.
-              </p>
-              <img src="images/doorway/history.jpg" alt="doorway history tab" class="case-study-media mb-6" />
-              <img src="images/doorway/doorsettings.jpg" alt="doorway doorsettings" class="case-study-media mb-6" />
-              <p class="text-lg leading-relaxed text-gray-700">
-                The door page offers functionality for users to open or close their door and update their status, keeping friends informed about their activities or mood. It provides customization options, including the ability to change the door's color, choose emojis, or upload personal photos for display. Additionally, the interface presents message suggestions for statuses when doors are being opened or closed.
-              </p>
-            </section>
-
-            <section id="doorway-project-link">
-              <p class="section-kicker mb-3">12 / Prototype Link</p>
-              <h2 class="mb-4 text-4xl font-bold">Project Link</h2>
-              <div class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-100">
-                <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/proto/WpYVEdtJ2y2tRv6MqblGiM/INF-132-Project--Enduros?page-id=64%3A225&type=design&node-id=152-178&viewport=682%2C-271%2C0.49&scaling=scale-down&starting-point-node-id=152%3A178&embed-host=share" allowfullscreen class="h-96 w-full"></iframe>
-              </div>
-            </section>
-
-            <section id="doorway-takeaways">
-              <p class="section-kicker mb-3">13 / Takeaways</p>
-              <h2 class="mb-4 text-4xl font-bold">Takeaways</h2>
-              <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-              <p>
-                Doorway taught me how quickly a project can evolve once real user feedback enters the process. What started as an idea focused on long-distance connection gradually shifted into a broader exploration of emotional availability, social pressure, and how digital spaces can encourage people to reach out more naturally.
-              </p>
-              <p>
-                One of the biggest takeaways from this project was learning how important iteration is within UX design. Many of our strongest ideas came after interviews, usability feedback, and redesigning interactions that initially felt unclear or overly complicated. Small details like notification behavior, door states, and interaction flow ended up having a major impact on how users interpreted the experience.
-              </p>
-              <p>
-                The project also strengthened my ability to collaborate within a creative team environment. Brainstorming concepts, refining metaphors, building prototypes in Figma, and continuously revisiting our design decisions made the experience feel much closer to a real product design workflow rather than a traditional class assignment.
-              </p>
-            </div>
-            </section>
+      <section id="research" class="cs-section">
+        <p class="eyebrow">04 — Research</p>
+        <h2 class="h2">Interviewing</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>As a team, we each conducted two interviews, totaling 10 participants. Our problem statement originally aimed at bridging connections over long distances, but as we talked with friends, family, and peers, the conversations naturally shifted from long-distance connection to more immediate concerns around personal well-being.</p>
+          </div>
+          <div class="quotes">
+            <blockquote>“I wish there was a way for people to reach out for me to see that I’m just sitting online on my phone so I can know I can tap into them and they’re active and available.”</blockquote>
+            <blockquote>“A person to listen to my struggles was a good example of support. Someone to just be there for me so I didn’t feel alone and empathize with me.”</blockquote>
+            <blockquote>“[When] we’re at a level where we can be vulnerable with each other … it makes me feel like I can share my stories and emotions at that moment. It connects our souls.”</blockquote>
+            <blockquote>“I’m rarely the one to reach out first… usually wait for someone to text first.”</blockquote>
+            <blockquote>“[I] don’t want to drain others with personal feelings all the time.”</blockquote>
           </div>
         </div>
+      </section>
+
+      <section id="affinity" class="cs-section">
+        <p class="eyebrow">05 — Affinity diagram</p>
+        <h2 class="h2">Finding the themes</h2>
+        <div class="flow">
+          <div class="media media--bleed"><img src="images/doorway/web/affinity.webp" alt="Doorway affinity diagram of interview insights" width="1600" height="900" loading="lazy" /></div>
+          <div class="prose">
+            <p>To better understand the problem, we used an affinity diagram to collate and analyze insights from each interview. Visually organizing the data helped us identify common themes across participants’ feedback.</p>
+          </div>
+          <dl class="rows">
+            <div><dt>Support in stressful times</dt><dd>Support during high-pressure moments is appreciated, and listening and “just being there” matters most</dd></div>
+            <div><dt>Reciprocated support</dt><dd>People are more inclined to engage and reciprocate when someone reaches out first, so the design should encourage proactive outreach</dd></div>
+            <div><dt>Taking the initiative</dt><dd>It’s impactful when a loved one takes the initiative to offer support</dd></div>
+          </dl>
+          <div class="prose">
+            <p>Reflecting on the interviews, it became clear the project needed a shift in direction. Bridging long-distance connections didn’t address the broader issue of mental wellness. Enhancing mental well-being through improved social interaction became a clearer, more impactful goal.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="design" class="cs-section">
+        <p class="eyebrow">06 — Design phase</p>
+        <h2 class="h2">Personas to prototype</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>Creating user personas helped us visualize our target users’ needs and behaviors, guiding storyboards that illustrated how people might interact with the app.</p>
+          </div>
+          <div class="media media--bleed"><img src="images/doorway/web/personas.webp" alt="Doorway user personas" width="1600" height="748" loading="lazy" /></div>
+          <div class="prose">
+            <p>Our design phase was iterative and anchored in user feedback. We moved from low-fidelity paper sketches that laid out structure and flow, to mid-fidelity prototypes that introduced interaction design, to a high-fidelity prototype that polished the interface.</p>
+          </div>
+          <div class="stats">
+            <div><b>01</b><span>Low-fidelity paper sketches</span></div>
+            <div><b>02</b><span>Mid-fidelity prototype</span></div>
+            <div><b>03</b><span>High-fidelity prototype</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sketches" class="cs-section">
+        <p class="eyebrow">07 — Paper sketches</p>
+        <h2 class="h2">Paper sketches</h2>
+        <div class="flow">
+          <div class="media"><img src="images/doorway/web/sketches.webp" alt="Doorway paper sketches of lock screen, widgets, and home page" width="1600" height="820" loading="lazy" /></div>
+          <div class="prose">
+            <p>At this stage, our design was heavily inspired by social apps like Locket, which we covered in our competitive analysis.</p>
+          </div>
+          <dl class="rows">
+            <div><dt>Lock screen notifications</dt><dd>Show your social circle’s presence without opening the app, fostering more spontaneous conversations</dd></div>
+            <div><dt>Widgets</dt><dd>A personalized home screen widget offering a visual snapshot of friends’ current activities</dd></div>
+            <div><dt>Home page</dt><dd>Contacts with clear availability indicators: green dots for available friends, grey for unavailable</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="wireframes" class="cs-section">
+        <p class="eyebrow">08 — Wireframes</p>
+        <h2 class="h2">The door metaphor</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>Kaila Long and I spent hours brainstorming at school, exchanging and refining ideas until we landed on a concept that truly sparked our interest. The metaphor of “doors” became the focal point, and we built the project around it.</p>
+          </div>
+          <div class="media"><img src="images/doorway/web/midfi.webp" alt="Doorway mid-fidelity wireframes of the home page and My Door" width="1600" height="1136" loading="lazy" /></div>
+          <dl class="rows">
+            <div><dt>Home page</dt><dd>See the status of friends on the platform at a glance: their doors, and who has knocked or left a message on yours</dd></div>
+            <div><dt>My Door</dt><dd>Customize your door to make interactions more enjoyable and light-hearted</dd></div>
+          </dl>
+          <div class="media"><img src="images/doorway/web/midfi2.webp" alt="Doorway mid-fidelity wireframes of viewing a door and the history tab" width="1600" height="1136" loading="lazy" /></div>
+          <dl class="rows">
+            <div><dt>Viewing a door</dt><dd>Open a friend’s customized door to knock or leave a short note. Visual indicators show status, like a door set to “open” appearing ajar</dd></div>
+            <div><dt>History tab</dt><dd>See whose doors friends have knocked on, so you can keep track of who reached out and respond when you have time</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="hifi" class="cs-section">
+        <p class="eyebrow">09 — High-fidelity prototype</p>
+        <h2 class="h2">High-fidelity prototype</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>Kaila Long played a pivotal role in developing our initial high-fidelity prototype. Her expertise in Figma helped translate the team’s ideas into a workable prototype.</p>
+          </div>
+          <div class="media"><img src="images/doorway/web/firsthifi.webp" alt="Doorway first high-fidelity prototype screens" width="1600" height="859" loading="lazy" /></div>
+          <ul class="ticks">
+            <li>Landing page</li>
+            <li>Home page</li>
+            <li>My Door</li>
+            <li>History tab</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="testing" class="cs-section">
+        <p class="eyebrow">10 — Testing</p>
+        <h2 class="h2">Usability evaluation</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>To refine the experience, I ran a mini usability evaluation with my roommate, using tasks like sending a knock, viewing your door, updating your status, and responding to a knock.</p>
+          </div>
+          <h3 class="h3">Notable findings</h3>
+          <dl class="rows">
+            <div><dt>Friends list and settings</dt><dd>The absence of a visible friends list and a clearly defined settings page were critical issues</dd></div>
+            <div><dt>Visual communication</dt><dd>The “open” versus “closed” door metaphor needed clearer visual cues</dd></div>
+          </dl>
+          <h3 class="h3">Proposed adjustments</h3>
+          <ul class="ticks">
+            <li>Tailor notifications to door status: passive notes for closed doors, active notifications for open ones</li>
+            <li>A closed door doesn’t trigger notifications, but notes left by others appear when the app is reopened</li>
+            <li>An open door enables notifications to signal active connection attempts</li>
+            <li>Change the interaction for a closed door</li>
+          </ul>
+          <div class="prose">
+            <p>This evaluation was instrumental in identifying both strengths and areas for improvement, and gave clear direction for making future iterations more intuitive and engaging.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="final" class="cs-section">
+        <p class="eyebrow">11 — Final design</p>
+        <h2 class="h2">Final design</h2>
+        <div class="flow">
+          <div class="media"><img src="images/doorway/web/finalscreenshots.webp" alt="Doorway final design screens" width="1600" height="800" loading="lazy" /></div>
+          <div class="prose">
+            <p>Our final design evolved significantly from peer feedback and usability evaluations. A key addition was a screen for adding neighbors, addressing a gap in the prior version. We also turned the “knock” function into a tangible button on the door itself, represented by a hand emoji, which let us place statuses directly beneath each door.</p>
+          </div>
+          <div class="media"><img src="images/doorway/web/storyreply.webp" alt="Doorway grid view of doors with popup menus" width="1512" height="1000" loading="lazy" /></div>
+          <div class="prose">
+            <p>We developed an alternative grid view for doors instead of a sliding carousel, and introduced popup menus for interactions.</p>
+          </div>
+          <div class="media"><img src="images/doorway/web/sendingknock.webp" alt="Doorway closed-door popup suggesting to knock later" width="1600" height="800" loading="lazy" /></div>
+          <div class="prose">
+            <p>To resolve the ambiguity between closed and open doors from testing, we added a popup that tells you when a door is closed and suggests knocking later or getting notified when it opens. It keeps connection engaging while respecting people’s boundaries.</p>
+          </div>
+          <div class="gallery gallery--2">
+            <div class="media"><img src="images/doorway/web/history.webp" alt="Doorway history tab" width="1512" height="1000" loading="lazy" /></div>
+            <div class="media"><img src="images/doorway/web/doorsettings.webp" alt="Doorway My Door settings with open and closed states" width="1490" height="1000" loading="lazy" /></div>
+          </div>
+          <div class="prose">
+            <p>The door page lets you open or close your door and update your status, keeping friends informed about your activities or mood. You can change the door’s color, choose emojis, or upload photos, and the interface suggests status messages as you open or close your door.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="prototype" class="cs-section">
+        <p class="eyebrow">12 — Prototype</p>
+        <h2 class="h2">Try the prototype</h2>
+        <div class="panel panel--proto" style="margin-top: 28px;">
+          <iframe src="https://embed.figma.com/proto/WpYVEdtJ2y2tRv6MqblGiM/INF-132-Project--Enduros?page-id=64%3A225&type=design&node-id=152-178&viewport=682%2C-271%2C0.49&scaling=scale-down&starting-point-node-id=152%3A178&embed-host=share" title="Doorway interactive Figma prototype" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div>
+  </div>
 </main>
 
-<!-- FOOTER -->
-<footer id="contact" class="px-6 py-20 text-center text-gray-900" style="background: linear-gradient(to bottom, #f3f4f6 0%, #e5e7eb 100%);">
-  <h2 class="mb-4 text-4xl font-bold">Let’s work together!</h2>
-  <p class="mx-auto mb-8 max-w-xl text-gray-700">Interested in UX, technical support, and the people side of technology.</p>
-  <div class="flex flex-wrap justify-center gap-4">
-    <a href="mailto:emand7206@gmail.com" class="inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white shadow-lg">Contact Me</a>
-    <a id="resume" href="resume.pdf" class="inline-block rounded-full border border-gray-900 px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white">View Resume</a>
+<!-- TAKEAWAYS -->
+<section id="takeaways" class="takeaways section">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">13 — Takeaways</p>
+      <h2 class="h2">What I took away</h2>
+    </div>
+    <div class="prose">
+      <p>Doorway taught me how quickly a project can evolve once real user feedback enters the process. What started as an idea about long-distance connection gradually became a broader exploration of emotional availability, social pressure, and how digital spaces can encourage people to reach out more naturally.</p>
+      <p>One of my biggest takeaways was how important iteration is in UX design. Many of our strongest ideas came after interviews, usability feedback, and redesigning interactions that first felt unclear or overly complicated. Small details like notification behavior, door states, and interaction flow had a major impact on how people interpreted the experience.</p>
+      <p>The project also strengthened my ability to collaborate in a creative team. Brainstorming concepts, refining metaphors, building prototypes in Figma, and continually revisiting our decisions made it feel much closer to a real product design workflow than a traditional class assignment.</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT PROJECT -->
+<a class="next" href="remembra.html">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Next project</p>
+      <h2>Remembra</h2>
+    </div>
+    <span class="next__arrow" aria-hidden="true">→</span>
+  </div>
+</a>
+
+<!-- CONTACT -->
+<footer id="contact" class="contact section">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 class="h2">Let’s work together.</h2>
+    <p class="contact__sub">Interested in UX, technical support, and the people side of technology.</p>
+    <div class="contact__actions">
+      <a href="mailto:ethanmandel@protonmail.com" class="btn btn--red">Email Me</a>
+      <a href="resume.pdf" class="btn btn--line" target="_blank" rel="noopener">View resume</a>
+    </div>
+    <div class="contact__meta">
+      <span>© 2026 Ethan Mandel</span>
+      <a href="mailto:ethanmandel@protonmail.com">ethanmandel@protonmail.com</a>
+      <span>Rancho Cucamonga, CA</span>
+      <a href="https://www.linkedin.com/in/ethanwmandel/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
 </footer>
 
+<script src="js/case-study.js?v=2"></script>
 </body>
 </html>

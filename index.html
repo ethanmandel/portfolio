@@ -4,180 +4,322 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ethan Mandel | Portfolio</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <meta name="description" content="Ethan Mandel is a UX and product designer from UC Irvine who shoots on film. Case studies: Remembra, Laguna Ocean Foundation, and Doorway." />
+  <meta property="og:title" content="Ethan Mandel | Portfolio" />
+  <meta property="og:description" content="UX / product design, creative tech, and film photography." />
+  <meta property="og:image" content="https://mandelethan.com/images/home/og.jpg" />
+  <meta property="og:url" content="https://mandelethan.com/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/site.css?v=2" />
   <style>
-    html { scroll-behavior: smooth; }
-    body { background: #f3f4f6; }
-    .accent { color: #9A0002; }
-    .bg-accent { background-color: #9A0002; }
-    .soft-card { background: rgba(255,255,255,.78); backdrop-filter: blur(10px); }
-    @keyframes scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-576px); }
+    /* HERO */
+    .hero .wrap {
+      min-height: calc(92vh - 68px);
+      display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 64px;
+      padding-top: 64px; padding-bottom: 64px;
     }
-    .animate-scroll { animation: scroll 16s linear infinite; }
+    .hero h1 {
+      font-size: clamp(44px, 6.4vw, 84px);
+      font-weight: 400; line-height: 1.02; letter-spacing: -.03em;
+      margin-bottom: 28px;
+    }
+    .hero h1 strong { color: var(--red); font-weight: 700; }
+    .hero--wrapped .hero__lede { display: none !important; }
+    .hero__lede { font-size: 21px; line-height: 1.5; color: #2c2925; max-width: 500px; }
+    .hero__eyebrow { font-size: 14px; line-height: 1.8; margin-bottom: 28px; }
+    .hero__eyebrow span { display: block; }
+    /* the hero links are underlined text, like the project card links */
+    .hero__actions { display: grid; justify-items: start; gap: 16px; margin-top: 36px; }
+    .hero__link {
+      display: inline-flex; gap: 10px; align-items: center;
+      font-size: 19px; font-weight: 600; color: var(--ink);
+      border-bottom: 1.5px solid currentColor; padding-bottom: 3px;
+      transition: color .2s, gap .2s;
+    }
+    .hero__link:hover { gap: 14px; }
+    .hero__link--red { color: var(--red); }
+    .hero__link::after { content: "↗"; }
+
+    /* Film strip: runs the full height of the hero, hard cut under the nav,
+       and resolves into the About section's red at the bottom */
+    .strip {
+      position: relative; align-self: stretch;
+      width: 324px; margin: -64px 0;
+      overflow: hidden;
+    }
+    .strip__layer { position: absolute; inset: 0; background: var(--black); }
+    /* Darkroom: a red safelight tint creeps up over the black-and-white prints,
+       then goes solid red where the strip meets the About section */
+    .strip::before, .strip::after { content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+    .strip::before { background: linear-gradient(transparent 58%, var(--red) 82%); mix-blend-mode: color; }
+    .strip::after { background: linear-gradient(transparent 82%, var(--red) 98%); }
+    /* sprocket holes down both edges */
+    .strip__edge {
+      position: absolute; top: 0; bottom: 0; width: 34px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='42'%3E%3Crect x='10' y='12' width='14' height='18' rx='3' fill='%23fafafa'/%3E%3C/svg%3E") repeat-y center top / 34px 42px;
+    }
+    .strip__edge--l { left: 0; }
+    .strip__edge--r { right: 0; }
+    .strip__edge span {
+      position: absolute; top: 0; bottom: 0; left: -1px;
+      writing-mode: vertical-rl; transform: rotate(180deg);
+      font-size: 9px; font-weight: 600; letter-spacing: .1em; color: #f0c23b;
+      white-space: nowrap; overflow: hidden; opacity: .85;
+    }
+    .strip__edge--r span { left: auto; right: -1px; transform: none; }
+    .strip__reel {
+      position: absolute; left: 34px; right: 34px; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .strip__frame { aspect-ratio: 2 / 3; border-radius: 4px; overflow: hidden; background: #1d1d1d; flex: none; }
+    .strip__frame img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1) contrast(1.08); }
+
+    /* ABOUT */
+    .about { background: var(--red); color: #fbf3f1; }
+    .about .eyebrow { color: rgba(255,255,255,.65); }
+    .about .wrap { display: grid; grid-template-columns: 1fr 1.6fr; gap: 64px; }
+    .about__body { display: grid; gap: 20px; font-size: 18px; line-height: 1.65; color: rgba(255,245,243,.88); }
+
+    /* WORK */
+    .work { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .work__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 48px; }
+    .work__head p { font-size: 17px; color: var(--muted); max-width: 420px; line-height: 1.5; }
+    .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .project { display: flex; flex-direction: column; }
+    .project__cover {
+      position: relative; aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden;
+      background: #f2f2f2;
+      container-type: inline-size; /* tiles are placed in cqw = 1% of panel width */
+    }
+    /* Rest: one big phone. Hover: it shrinks into the top-left slot and three
+       more screens fade in while rising a short way, filling a staggered
+       two-column collage that runs off the top and bottom of the panel. */
+    .shot, .tile {
+      position: absolute; border-radius: 18px; overflow: hidden;
+      transform-origin: 0 0;
+      transition: transform .4s cubic-bezier(.3,1.12,.6,1), opacity .3s ease;
+    }
+    .shot { z-index: 2; left: 19cqw; top: 14cqw; width: 62cqw; }
+    .tile { z-index: 1; width: 40cqw; border-radius: 12px; transform: translateY(14cqw); opacity: 0; }
+    .tile--2 { left: 52cqw; top: -20cqw; }
+    .tile--3 { left: 8cqw;  top: 99cqw; }
+    .tile--4 { left: 52cqw; top: 71cqw; }
+    .project:hover .shot, .project:focus-visible .shot { transform: translate(-11cqw, -6cqw) scale(.645); }
+    .project:hover .tile, .project:focus-visible .tile { transform: none; opacity: 1; }
+    .project:hover .tile--2, .project:focus-visible .tile--2 { transition-delay: .03s; }
+    .project:hover .tile--4, .project:focus-visible .tile--4 { transition-delay: .07s; }
+    .project:hover .tile--3, .project:focus-visible .tile--3 { transition-delay: .11s; }
+    /* touch screens have no hover: show the collage at rest */
+    @media (hover: none) {
+      .shot { transform: translate(-11cqw, -6cqw) scale(.645); }
+      .tile { transform: none; opacity: 1; }
+    }
+    .project__info { padding-top: 22px; }
+    .project__type { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
+    .project h3 { font-size: 24px; font-weight: 700; letter-spacing: -.015em; margin-bottom: 8px; }
+    .project__desc { font-size: 15px; line-height: 1.55; color: #4a4540; margin-bottom: 14px; }
+    .project__meta { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+    .project__link { font-size: 15px; font-weight: 600; border-bottom: 1.5px solid var(--ink); padding-bottom: 2px; align-self: flex-start; transition: color .2s, border-color .2s; }
+    .project:hover .project__link { color: var(--red); border-color: var(--red); }
+
+    /* MOBILE */
+    @media (max-width: 900px) {
+      .hero .wrap { grid-template-columns: 1fr; gap: 40px; min-height: 0; padding-top: 44px; padding-bottom: 64px; }
+      /* phones: the strip runs the full height of the hero on the right, inset to
+         match the left gutter, and burns into the About red; the header column is
+         centered beside it */
+      .hero .wrap {
+        --strip-w: clamp(156px, 34vw, 280px); /* the strip grows with the screen */
+        display: flex; align-items: center; position: relative;
+        min-height: 620px; padding: 48px calc(20px + var(--strip-w) + 24px) 48px 20px;
+      }
+      .strip { position: absolute; top: 0; bottom: 0; right: 20px; width: var(--strip-w); margin: 0; }
+      .strip__edge { width: 18px; background-size: 18px 24px; }
+      .strip__edge span { font-size: 6.5px; }
+      .strip__reel { left: 18px; right: 18px; gap: 10px; }
+      .hero .wrap > div:first-child { position: relative; z-index: 3; flex: 1; min-width: 0; }
+      .hero__lede { display: none; }
+      .hero__eyebrow { font-size: 12px; margin-bottom: 22px; }
+      .hero h1 { font-size: clamp(39px, 8vw, 60px); margin-bottom: 0; }
+      .hero__actions { gap: 14px; margin-top: 28px; }
+      .hero__link { font-size: 17px; }
+      /* the intro comes back from small-tablet width, and only while "Hey, I’m Ethan."
+         fits on one line (the script below adds .hero--wrapped when it breaks) */
+      @media (min-width: 680px) {
+        .hero__lede { display: block; font-size: clamp(16px, 2.6vw, 19px); margin-top: 18px; }
+        .hero h1 { margin-bottom: 0; }
+      }
+      .about .wrap { grid-template-columns: 1fr; gap: 24px; }
+      .about__body { font-size: 17px; }
+      .work__head { flex-direction: column; align-items: flex-start; margin-bottom: 32px; }
+      .projects { grid-template-columns: 1fr; gap: 48px; }
+      /* phones: a wide panel with all four screens in one row, always shown */
+      .projects .project__cover { aspect-ratio: 3 / 2; }
+      .projects .project .shot { transform: translate(-15.5cqw, -4cqw) scale(.339); transition: none; }
+      .projects .project .tile { width: 21cqw; top: 10cqw; border-radius: 6px; transform: none; opacity: 1; transition: none; }
+      .projects .tile--2 { left: 27.5cqw; }
+      .projects .tile--3 { left: 51.5cqw; }
+      .projects .tile--4 { left: 75.5cqw; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .shot, .tile { transition: none; }
+    }
   </style>
 </head>
-<body class="font-sans text-gray-900">
+<body>
 
-<!-- NAV -->
-<nav class="fixed top-0 z-50 w-full border-b border-black border-opacity-10 bg-white bg-opacity-70 backdrop-filter backdrop-blur">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-    <a href="#top" class="text-xl font-semibold tracking-tight">ethan mandel</a>
-    <div class="hidden gap-8 text-sm font-medium md:flex">
-      <a href="#about" class="hover:opacity-60">about</a>
-      <a href="#projects" class="hover:opacity-60">projects</a>
-      <a href="#resume" class="hover:opacity-60">resume</a>
-      <a href="#contact" class="hover:opacity-60">contact</a>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a href="#top" class="nav__logo">ethan mandel</a>
+    <div class="nav__links">
+      <a href="#about">about me</a>
+      <a href="#work">my work</a>
+      <a href="#contact">contact</a>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section id="top" class="min-h-screen flex items-center pt-24" style="background: linear-gradient(to bottom, #e5e7eb 0%, #f3f4f6 55%, #ffffff 100%);">
-  <div class="container mx-auto px-6">
-    <div class="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
-      <div class="text-left">
-        <p class="mb-4 text-sm font-semibold uppercase tracking-widest text-gray-500">UX / Product Design / Creative Tech</p>
-        <h1 class="mb-6 text-4xl font-semibold leading-tight md:text-6xl">
-          What's Up? I'm <span class="accent font-bold">Ethan</span>
-        </h1>
-        <p class="max-w-xl text-lg leading-relaxed text-gray-700 md:text-xl">
-          I like creating things real people interact with. Whether it starts through the lens of a camera or behind a screen, my perspective plays a big role in how I shape my work.
-        </p>
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a href="#projects" class="rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Projects</a>
-          <a href="#about" class="rounded-full bg-black px-6 py-3 text-white shadow-lg transition hover:opacity-90">About Me</a>
-        </div>
+<header id="top" class="hero">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow hero__eyebrow"><span>Technology</span><span>Design</span><span>Photography</span></p>
+      <h1>Hey, I’m <strong>Ethan</strong>.</h1>
+      <p class="hero__lede">I’m an informatics graduate from UC Irvine who enjoys figuring out how things work and making things of my own. My work brings together my interests in technology, design, and photography.</p>
+      <div class="hero__actions">
+        <a href="#work" class="hero__link hero__link--red">See my work</a>
+        <a href="#contact" class="hero__link">Contact me</a>
       </div>
-      <div class="flex justify-center md:justify-end">
-        <img src="images/hero-fade.png" alt="Portrait or portfolio hero visual" class="w-full max-w-xs object-contain md:max-w-md" />
+    </div>
+    <!-- Film strip: add photos as more .strip__frame blocks; the portrait stays centered -->
+    <div class="strip">
+      <div class="strip__layer">
+        <div class="strip__edge strip__edge--l" aria-hidden="true"><span>KODAK PORTRA 400 &nbsp;&nbsp; 8 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 9 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 10 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 11 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 12 &nbsp;&nbsp; KODAK PORTRA 400</span></div>
+        <div class="strip__edge strip__edge--r" aria-hidden="true"><span>▸ 8A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 9A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 10A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 11A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 12</span></div>
+        <div class="strip__reel">
+          <div class="strip__frame"><img src="images/home/film-wheel.webp" alt="Looking up at a lit Ferris wheel at night" width="700" height="1050" /></div>
+          <div class="strip__frame"><img src="images/home/film-waterfall.webp" alt="Waterfall pouring down a streaked granite cliff" width="700" height="1050" /></div>
+          <div class="strip__frame"><img src="images/home/portrait.webp" alt="Ethan in his UC Irvine graduation stole, shot on film" width="700" height="1050" /></div>
+          <div class="strip__frame"><img src="images/home/film-tower.webp" alt="Looking straight up through a steel transmission tower against blue sky, shot on film" width="700" height="1056" /></div>
+          <div class="strip__frame"><img src="images/home/film-train.webp" alt="A blurred train speeding past an underground platform, turned sideways on the strip" width="700" height="1055" /></div>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</header>
 
 <!-- ABOUT -->
-<section id="about" class="bg-white py-24">
-  <div class="container mx-auto px-6">
-    <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-3">
+<section id="about" class="about section">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">About me</p>
+      <h2 class="h2">A little behind the lens.</h2>
+    </div>
+    <div class="about__body">
+      <p>I’m a designer with a background in Informatics and Human-Computer Interaction from UC Irvine, but a lot of my interests outside of tech shape the way I approach creative work. I grew up playing flute and oboe, spent time performing in wind ensemble, and still spend way too much time listening to music, going to concerts, and talking about pop culture with friends.</p>
+      <p>I also love shooting on film. Most of the photos I take are of friends, concerts, events, and moments that feel personal. I like that film forces you to slow down and actually think about composition instead of taking hundreds of photos at once.</p>
+      <p>A lot of the work I enjoy sits somewhere between design, technology, music, and visual culture. I’m naturally pretty outgoing and collaborative, and I like projects that feel creative, visually interesting, and human instead of overly corporate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<main id="work" class="work section">
+  <div class="wrap">
+    <div class="work__head">
       <div>
-        <h2 class="text-4xl font-bold">A little behind the lens.</h2>
+        <p class="eyebrow">Featured projects</p>
+        <h2 class="h2">Selected work</h2>
       </div>
-      <div class="space-y-6 text-lg leading-relaxed text-gray-700 md:col-span-2">
-        <div class="space-y-6">
-        <p>
-          I’m a designer with a background in Informatics and Human-Computer Interaction from UC Irvine, but a lot of my interests outside of tech shape the way I approach creative work. I grew up playing flute and oboe, spent time performing in wind ensemble, and still spend way too much time listening to music, going to concerts, and talking about pop culture with friends.
-        </p>
-        <p>
-          I also love shooting on film. Most of the photos I take are of friends, concerts, events, and moments that feel personal. I like that film forces you to slow down and actually think about composition instead of taking hundreds of photos at once.
-        </p>
-        <p>
-          A lot of the work I enjoy sits somewhere between design, technology, music, and visual culture. I’m naturally pretty outgoing and collaborative, and I like projects that feel creative, visually interesting, and human instead of overly corporate.
-        </p>
-        <p>
-          Outside of design, you’ll probably find me behind a camera, on a bike ride, or lost in my favorite album.
-        </p>
-</div>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FEATURED PROJECTS -->
-<section id="projects" class="py-24 bg-gray-100">
-  <div class="container mx-auto px-6">
-    <div class="mx-auto mb-14 max-w-6xl">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">Featured Projects</p>
-      <h2 class="mb-4 text-4xl font-bold">Selected work</h2>
-      <p class="max-w-3xl text-lg leading-relaxed text-gray-700">
-        A few projects that show how I think through research, structure, visuals, and the actual experience people have when using something.
-      </p>
+      <p>Research, visuals, and the experience in between.</p>
     </div>
 
-    <!-- Remembra -->
-    <article id="remembra" class="mx-auto mb-16 max-w-6xl overflow-hidden rounded-3xl bg-white p-8 shadow-xl md:p-12">
-      <div class="grid gap-10 md:grid-cols-2">
-        <div>
-          <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">App Concept / UX Case Study</p>
-          <h3 class="mb-5 text-4xl font-bold">Remembra</h3>
-          <p class="mb-6 text-lg leading-relaxed text-gray-700">
-            A music-based memory care app concept designed to help patients and caregivers use familiar songs as a way to reconnect with memories, support mood, and create a more personal care experience.
-          </p>
-          <div class="mb-8 grid grid-cols-2 gap-4 text-sm">
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Role</p><p class="text-gray-600">Product / UX Lead</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Focus</p><p class="text-gray-600">Research, prototyping, app flow</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, React, Expo</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Type</p><p class="text-gray-600">College startup concept</p></div>
-          </div>
-          <a href="remembra.html" class="inline-block rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Project Pitch</a>
+    <div class="projects">
+      <a class="project" href="remembra.html">
+        <div class="project__cover">
+          <img class="tile tile--2" src="images/home/cards/remembra-profile.webp" alt="Remembra profile screen with top tracks and weekly listening" />
+          <img class="tile tile--3" src="images/home/cards/remembra-quiz.webp" alt="Remembra memory game quiz screen" />
+          <img class="tile tile--4" src="images/home/cards/remembra4.webp" alt="Remembra song library screen" />
+          <img class="shot" src="images/home/cover-remembra.webp" alt="Remembra now playing screen" loading="lazy" />
         </div>
-        <div class="grid grid-cols-3 gap-4 self-center">
-          <img src="images/remembra/Welcome.png" alt="Remembra welcome screen" class="rounded-2xl shadow" />
-          <img src="images/remembra/Set Up Selection.png" alt="Remembra set up screen" class="mt-10 rounded-2xl shadow" />
-          <img src="images/remembra/Now Playing.png" alt="Remembra now playing screen" class="rounded-2xl shadow" />
+        <div class="project__info">
+          <p class="project__type">App concept</p>
+          <h3>Remembra</h3>
+          <p class="project__desc">Memory care through familiar music.</p>
+          <p class="project__meta">Product / UX Lead · Figma, React, Expo</p>
         </div>
-      </div>
-    </article>
-
-    <!-- Laguna Ocean Foundation -->
-    <article id="laguna" class="mx-auto mb-16 max-w-6xl overflow-hidden rounded-3xl bg-white p-8 shadow-xl md:p-12">
-      <div class="grid gap-10 md:grid-cols-2">
-        <div>
-          <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">Nonprofit Website Redesign</p>
-          <h3 class="mb-5 text-4xl font-bold">Laguna Ocean Foundation</h3>
-          <p class="mb-6 text-lg leading-relaxed text-gray-700">A redesigned educational website for tidepool visitors, focused on clearer trip planning, species discovery, tide information, and a more useful on-site experience through QR signage.</p>
-          <div class="mb-8 grid grid-cols-2 gap-4 text-sm">
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Role</p><p class="text-gray-600">UX / UI Designer</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Focus</p><p class="text-gray-600">Navigation, accessibility, content structure</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, Next.js, Tailwind</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Type</p><p class="text-gray-600">UCI capstone project</p></div>
-          </div>
-          <a href="laguna.html" class="inline-block rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Case Study</a>
+        <span class="project__link">View project pitch</span>
+      </a>
+      <a class="project" href="laguna.html">
+        <div class="project__cover">
+          <img class="tile tile--3" src="images/home/cards/laguna-faqs.webp" alt="Laguna Ocean Foundation FAQ page" />
+          <img class="tile tile--2" src="images/home/cards/laguna-charts.webp" alt="Laguna Ocean Foundation tidepool charts page" />
+          <img class="tile tile--4" src="images/home/cards/laguna-species.webp" alt="Laguna Ocean Foundation species guide page" />
+          <img class="shot" src="images/home/cover-laguna.webp" alt="Laguna Ocean Foundation mobile homepage" loading="lazy" />
         </div>
-        <div class="grid grid-cols-3 gap-4 self-center">
-          <img src="images/laguna/laguna1.png" alt="Laguna Screen 1" class="rounded-2xl shadow" />
-          <img src="images/laguna/laguna2.png" alt="Laguna Screen 2" class="mt-10 rounded-2xl shadow" />
-          <img src="images/laguna/laguna3.png" alt="Laguna Screen 3" class="rounded-2xl shadow" />
+        <div class="project__info">
+          <p class="project__type">Website redesign</p>
+          <h3>Laguna Ocean Foundation</h3>
+          <p class="project__desc">An easier way to plan a tidepool visit.</p>
+          <p class="project__meta">UX / UI Designer · Figma, Next.js, Tailwind</p>
         </div>
-      </div>
-    </article>
-
-    <!-- Doorway -->
-    <article id="doorway" class="mx-auto max-w-6xl overflow-hidden rounded-3xl bg-white p-8 shadow-xl md:p-12">
-      <div class="grid gap-10 md:grid-cols-2">
-        <div>
-          <p class="mb-3 text-sm font-semibold uppercase tracking-widest accent">UX / Product Concept</p>
-          <h3 class="mb-5 text-4xl font-bold">Doorway</h3>
-          <p class="mb-6 text-lg leading-relaxed text-gray-700">Doorway is a platform with a mission to bridge the gap in social connectivity. We aimed to create a digital space that not only encourages users to foster deeper social connections but also empowers them to take the initiative in reaching out to friends and family.</p>
-          <div class="mb-8 grid grid-cols-2 gap-4 text-sm">
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Role</p><p class="text-gray-600">UX / UI Designer</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Focus</p><p class="text-gray-600">User flow, interface structure</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Tools</p><p class="text-gray-600">Figma, prototyping</p></div>
-            <div class="rounded-2xl bg-gray-100 p-4"><p class="font-bold">Type</p><p class="text-gray-600">Portfolio project</p></div>
-          </div>
-          <a href="doorway.html" class="inline-block rounded-full bg-accent px-6 py-3 text-white shadow-lg transition hover:opacity-90">View Case Study</a>
+        <span class="project__link">View case study</span>
+      </a>
+      <a class="project" href="doorway.html">
+        <div class="project__cover">
+          <img class="tile tile--2" src="images/home/cards/doorway3.webp" alt="Doorway notification history screen" />
+          <img class="tile tile--3" src="images/home/cards/doorway2.webp" alt="Doorway add friends screen" />
+          <img class="tile tile--4" src="images/home/cards/doorway4.webp" alt="Doorway my door screen" />
+          <img class="shot" src="images/home/cover-doorway.webp" alt="Doorway welcome screen" loading="lazy" />
         </div>
-        <div class="grid grid-cols-3 gap-4 self-center">
-          <img src="images/doorway/doorway1.png" alt="Doorway Screen 1" class="rounded-2xl shadow" />
-          <img src="images/doorway/doorway2.png" alt="Doorway Screen 2" class="mt-10 rounded-2xl shadow" />
-          <img src="images/doorway/doorway3.png" alt="Doorway Screen 3" class="rounded-2xl shadow" />
+        <div class="project__info">
+          <p class="project__type">Product concept</p>
+          <h3>Doorway</h3>
+          <p class="project__desc">Nudging people to reach out first.</p>
+          <p class="project__meta">UX / UI Designer · Figma, prototyping</p>
         </div>
-      </div>
-    </article>
+        <span class="project__link">View case study</span>
+      </a>
+    </div>
   </div>
-</section>
+</main>
 
 <!-- CONTACT -->
-<footer id="contact" class="px-6 py-20 text-center text-gray-900" style="background: linear-gradient(to bottom, #f3f4f6 0%, #e5e7eb 100%);">
-<h2 class="mb-4 text-4xl font-bold">Let’s work together!</h2>
-  <p class="mx-auto mb-8 max-w-xl text-gray-700">Interested in UX, technical support, and the people side of technology.</p>
-  <div class="flex flex-wrap justify-center gap-4">
-    <a href="mailto:emand7206@gmail.com" class="inline-block rounded-full bg-accent px-6 py-3 font-semibold text-white shadow-lg">Contact Me</a>
-    <a id="resume" href="resume.pdf" class="inline-block rounded-full border border-gray-900 px-6 py-3 font-semibold text-gray-900 transition hover:bg-gray-900 hover:text-white">View Resume</a>
+<footer id="contact" class="contact section">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 class="h2">Let’s work together.</h2>
+    <p class="contact__sub">Interested in UX, technical support, and the people side of technology.</p>
+    <div class="contact__actions">
+      <a href="mailto:ethanmandel@protonmail.com" class="btn btn--red">Email Me</a>
+      <a href="resume.pdf" class="btn btn--line" target="_blank" rel="noopener">View resume</a>
+    </div>
+    <div class="contact__meta">
+      <span>© 2026 Ethan Mandel</span>
+      <a href="mailto:ethanmandel@protonmail.com">ethanmandel@protonmail.com</a>
+      <span>Rancho Cucamonga, CA</span>
+      <a href="https://www.linkedin.com/in/ethanwmandel/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
   </div>
 </footer>
 
+<script>
+  // Hide the intro whenever "Hey, I’m Ethan." wraps onto a second line
+  (function () {
+    var hero = document.querySelector(".hero"), h1 = hero && hero.querySelector("h1");
+    if (!h1) return;
+    function check() {
+      var lineHeight = parseFloat(getComputedStyle(h1).lineHeight);
+      hero.classList.toggle("hero--wrapped", h1.getBoundingClientRect().height > lineHeight * 1.5);
+    }
+    check();
+    addEventListener("resize", check);
+    if ("ResizeObserver" in window) new ResizeObserver(check).observe(h1);
+    if (document.fonts) document.fonts.ready.then(check);
+  })();
+</script>
 </body>
 </html>
