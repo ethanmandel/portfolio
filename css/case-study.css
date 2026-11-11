@@ -89,6 +89,28 @@
 .quotes blockquote { background: var(--silver); border-radius: 22px; padding: 26px 28px; font-size: 17px; line-height: 1.55; color: var(--ink); }
 .quotes blockquote:first-child { grid-column: 1 / -1; font-size: 21px; font-weight: 600; letter-spacing: -.01em; }
 
+/* Momento: hero prints, numbered steps, and screenshot placeholders */
+.hero-prints { position: relative; aspect-ratio: 1 / 1; }
+.hero-prints img {
+  position: absolute; top: 8%; width: 46%;
+  background: #fff; padding: 4% 4% 12%;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08);
+  animation: rise .6s cubic-bezier(.3,1.12,.6,1) both;
+}
+.hero-prints img:nth-child(1) { left: 4%; transform: rotate(-6deg); }
+.hero-prints img:nth-child(2) { right: 4%; top: 12%; transform: rotate(5deg); animation-delay: .08s; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.steps div { border-top: 2px solid var(--red); padding-top: 14px; }
+.steps b { display: block; font-size: 13px; letter-spacing: .14em; color: var(--red); margin-bottom: 10px; }
+.steps h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+.steps p { font-size: 15px; line-height: 1.55; color: var(--body); }
+/* stand-in until a screenshot is supplied; swap the div for an <img> inside .media */
+.media--todo {
+  aspect-ratio: 16 / 10; display: grid; place-items: center; text-align: center;
+  border: 1.5px dashed rgba(17,17,17,.18); color: var(--muted); font-size: 14px; line-height: 1.5;
+}
+.media--todo b { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
+
 /* TAKEAWAYS: red, like the About section on the homepage */
 .takeaways { background: var(--red); color: #fbf3f1; }
 .takeaways .eyebrow { color: rgba(255,255,255,.65); }
@@ -121,12 +143,14 @@
   .cs-content { gap: 72px; }
   .prose { font-size: 17px; }
   .stats, .features, .gallery--2, .gallery--3, .paths, .quotes { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .hero-prints { width: 100%; max-width: 320px; margin: 36px auto 0; }
   .quotes blockquote:first-child { font-size: 18px; }
   .rows div { grid-template-columns: 1fr; gap: 4px; }
   .takeaways .wrap { grid-template-columns: 1fr; gap: 24px; }
   .next .wrap { padding-top: 48px; padding-bottom: 48px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lineup img { animation: none; }
+  .lineup img, .hero-prints img { animation: none; }
   .next__arrow { transition: none; }
 }

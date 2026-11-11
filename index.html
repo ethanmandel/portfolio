@@ -123,6 +123,27 @@
     .project__meta { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
     .project__link { font-size: 15px; font-weight: 600; border-bottom: 1.5px solid var(--ink); padding-bottom: 2px; align-self: flex-start; transition: color .2s, border-color .2s; }
     .project:hover .project__link { color: var(--red); border-color: var(--red); }
+    /* Featured project: full-width card with the cover on the left. Momento's cover
+       is its output, two 4×6 prints with the white border, that fan out on hover */
+    .project--feature {
+      grid-column: 1 / -1; margin-bottom: 24px;
+      display: grid; grid-template-columns: 1.45fr 1fr; gap: 56px; align-items: center;
+    }
+    .feature__cover { position: relative; aspect-ratio: 16 / 10; border-radius: 22px; overflow: hidden; background: #f2f2f2; }
+    .print {
+      position: absolute; top: 13%; width: 25%;
+      background: #fff; padding: 2.4% 2.4% 6.5%;
+      box-shadow: 0 1px 3px rgba(0,0,0,.08);
+      transition: transform .4s cubic-bezier(.3,1.12,.6,1);
+    }
+    .print--1 { left: 26%; transform: rotate(-5deg); }
+    .print--2 { left: 49%; transform: rotate(4deg) translateY(4%); }
+    .project--feature:hover .print--1, .project--feature:focus-visible .print--1 { transform: translateX(-16%) rotate(-8deg); }
+    .project--feature:hover .print--2, .project--feature:focus-visible .print--2 { transform: translateX(16%) rotate(7deg) translateY(4%); }
+    .feature__body { display: flex; flex-direction: column; }
+    .feature__body .project__info { padding-top: 0; }
+    .project--feature h3 { font-size: 34px; }
+    .project--feature .project__desc { font-size: 17px; max-width: 420px; }
 
     /* MOBILE */
     @media (max-width: 900px) {
@@ -155,6 +176,12 @@
       .about__body { font-size: 17px; }
       .work__head { flex-direction: column; align-items: flex-start; margin-bottom: 32px; }
       .projects { grid-template-columns: 1fr; gap: 48px; }
+      .project--feature { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+      .feature__cover { aspect-ratio: 3 / 2; }
+      .print { width: 28%; top: 9%; }
+      .feature__body .project__info { padding-top: 22px; }
+      .project--feature h3 { font-size: 24px; }
+      .project--feature .project__desc { font-size: 15px; }
       /* phones: a wide panel with all four screens in one row, always shown */
       .projects .project__cover { aspect-ratio: 3 / 2; }
       .projects .project .shot { transform: translate(-15.5cqw, -4cqw) scale(.339); transition: none; }
@@ -164,7 +191,7 @@
       .projects .tile--4 { left: 75.5cqw; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .shot, .tile { transition: none; }
+      .shot, .tile, .print { transition: none; }
     }
   </style>
 </head>
@@ -238,6 +265,23 @@
     </div>
 
     <div class="projects">
+      <!-- Featured: Momento. The cover shows the product's output, two 4×6 prints;
+           swap in app screenshots here once they exist -->
+      <a class="project project--feature" href="momento.html">
+        <div class="feature__cover">
+          <img class="print print--1" src="images/momento/portrait-1.webp" alt="Black-and-white Momento portrait print of a guest holding a small dog" width="700" height="1050" />
+          <img class="print print--2" src="images/momento/portrait-2.webp" alt="Black-and-white Momento portrait print of a smiling guest in glasses" width="700" height="1051" />
+        </div>
+        <div class="feature__body">
+          <div class="project__info">
+            <p class="project__type">Studio &amp; software · New</p>
+            <h3>Momento</h3>
+            <p class="project__desc">Wedding portraits, printed on the spot. A portrait studio I co-run, with a Mac app and an iPad app I designed and built to run it.</p>
+            <p class="project__meta">Co-founder · Design &amp; software · SwiftUI</p>
+          </div>
+          <span class="project__link">View project</span>
+        </div>
+      </a>
       <a class="project" href="remembra.html">
         <div class="project__cover">
           <img class="tile tile--2" src="images/home/cards/remembra-profile.webp" alt="Remembra profile screen with top tracks and weekly listening" />

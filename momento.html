@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Momento | Ethan Mandel</title>
+  <meta name="description" content="Momento: a wedding and event portrait studio I co-run, with a Mac app and an iPad app I designed and built so guests can choose their portrait and take home a print the same night." />
+  <meta property="og:title" content="Momento | Ethan Mandel" />
+  <meta property="og:description" content="Wedding portraits, printed on the spot." />
+  <meta property="og:image" content="https://mandelethan.com/images/home/og.jpg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="css/site.css?v=2" />
+  <link rel="stylesheet" href="css/case-study.css?v=3" />
+</head>
+<body>
+
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a href="index.html" class="nav__logo">ethan mandel</a>
+    <div class="nav__links">
+      <a href="index.html#about">about me</a>
+      <a href="index.html#work" aria-current="page">my work</a>
+      <a href="#contact">contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="cs-hero">
+  <div class="wrap">
+    <div>
+      <a href="index.html#work" class="back"><span aria-hidden="true">←</span> All work</a>
+      <p class="eyebrow">Studio &amp; software</p>
+      <h1>Momento</h1>
+      <p class="cs-hero__lede">A wedding and event portrait studio I co-run with my friend Darrian, and the Mac and iPad apps I designed and built so guests can choose their portrait and take home a print the same night.</p>
+    </div>
+    <div class="hero-prints" aria-hidden="true">
+      <img src="images/momento/portrait-1.webp" alt="" width="700" height="1050" />
+      <img src="images/momento/portrait-2.webp" alt="" width="700" height="1051" />
+    </div>
+    <dl class="facts">
+      <div><dt>Role</dt><dd>Co-founder, design &amp; software</dd></div>
+      <div><dt>Built with</dt><dd>SwiftUI (macOS + iPadOS)</dd></div>
+      <div><dt>Team</dt><dd>Ethan &amp; Darrian</dd></div>
+      <div><dt>Status</dt><dd>Launching soon</dd></div>
+    </dl>
+  </div>
+</header>
+
+<!-- CASE STUDY -->
+<main class="cs-body section">
+  <div class="wrap">
+    <nav class="toc" aria-label="Case study contents">
+      <p>Contents</p>
+      <a href="#idea">The idea</a>
+      <a href="#how">How it works</a>
+      <a href="#system">The system</a>
+      <a href="#floor">Designing for the event floor</a>
+      <a href="#guestbook">The guest book</a>
+      <a href="#website">The website</a>
+    </nav>
+
+    <div class="cs-content">
+      <section id="idea" class="cs-section">
+        <p class="eyebrow">01 — The idea</p>
+        <h2 class="h2">Guests deserve better than a photo booth.</h2>
+        <div class="prose">
+          <p>Darrian and I have been friends since sixth grade, and we’ve always shared two things: a love of photography and a love of technology. At weddings and events we kept seeing clunky setups and forgettable photos, so we started Momento: a real portrait station with a professional photographer, studio backdrop and lighting, and prints guests take home that night.</p>
+          <p>We shoot in black and white because it’s timeless and never clashes with the room. Off-the-shelf booth software didn’t fit how we wanted the night to run, so I designed and built our own.</p>
+        </div>
+      </section>
+
+      <section id="how" class="cs-section">
+        <p class="eyebrow">02 — How it works</p>
+        <h2 class="h2">From backdrop to print in minutes</h2>
+        <div class="steps" style="margin-top: 28px;">
+          <div><b>01</b><h3>Step in</h3><p>Our photographer takes a short series of portraits in front of the studio backdrop.</p></div>
+          <div><b>02</b><h3>Choose</h3><p>Moments later the photos appear on the iPad, and guests flip through and pick their favourite.</p></div>
+          <div><b>03</b><h3>Take it home</h3><p>The portrait prints on the spot: a 4×6 with our signature vintage white border.</p></div>
+          <div><b>04</b><h3>Leave a note</h3><p>As an add-on, guests write a message by hand that’s placed beside their portrait in the guest book.</p></div>
+        </div>
+        <div class="prose" style="margin-top: 32px;">
+          <p>No Wi-Fi, no apps for guests to download, and no waiting for a gallery link. Just a portrait in hand, the same night.</p>
+        </div>
+      </section>
+
+      <section id="system" class="cs-section">
+        <p class="eyebrow">03 — The system</p>
+        <h2 class="h2">Two apps, one direct connection</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>Momento runs on two SwiftUI apps that share one connection layer: an operator app on the Mac for us, and a guest app on the iPad. The iPad finds the Mac and connects to it directly, peer to peer, so the station works at any venue with no router or internet.</p>
+          </div>
+          <!-- TODO: replace with a screenshot of the Mac operator app -->
+          <div class="media media--todo"><p><b>Mac operator app</b>Screenshot coming soon</p></div>
+          <dl class="rows">
+            <div><dt>Mac operator app</dt><dd>Watches the Capture One export folder and groups each guest’s photos automatically by export time, then manages the print queue, the live gallery and settings</dd></div>
+            <div><dt>iPad guest app</dt><dd>Shows waiting groups as a gallery; guests tap theirs, swipe through, select a photo and confirm</dd></div>
+            <div><dt>Direct connection</dt><dd>Peer-to-peer over the Wi-Fi radio, reconnecting on its own if the link drops, with no network needed</dd></div>
+            <div><dt>Printing</dt><dd>The Mac prints the original straight from the export folder to a dye-sublimation printer as a bordered 4×6</dd></div>
+          </dl>
+          <!-- TODO: replace with a screenshot of the iPad guest app -->
+          <div class="media media--todo"><p><b>iPad guest app</b>Screenshot coming soon</p></div>
+        </div>
+      </section>
+
+      <section id="floor" class="cs-section">
+        <p class="eyebrow">04 — Designing for the event floor</p>
+        <h2 class="h2">Built for a busy reception, not a demo</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>Most of the design work went into what happens when things are hectic: a line of guests, two of us running the station, and no time to troubleshoot.</p>
+          </div>
+          <dl class="rows">
+            <div><dt>No send button</dt><dd>The assistant just exports a guest’s selects from Capture One. Momento notices the batch and puts it on the iPad, so there’s no extra step between shooting and choosing</dd></div>
+            <div><dt>Guests never see errors</dt><dd>Printer problems show only on the Mac, with a retry, while the iPad keeps the guest’s experience calm</dd></div>
+            <div><dt>Sensible defaults</dt><dd>On the guest-book screen, a tap prints two copies and waiting prints one, and screens time out back to the welcome screen on their own</dd></div>
+            <div><dt>Nothing gets lost</dt><dd>The queue survives a restart, photos are only ever read and never moved or deleted, and an unplugged drive is picked back up when it returns</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="guestbook" class="cs-section">
+        <p class="eyebrow">05 — The guest book</p>
+        <h2 class="h2">A handwritten page for every guest</h2>
+        <div class="flow">
+          <div class="prose">
+            <p>The guest book add-on asks each guest if they’d like to join. If they do, a large card opens on the iPad where they write or sign with Apple Pencil. The Mac then builds a print-ready guest-book page with their portrait and note side by side, alternating left and right pages in the order guests sign.</p>
+          </div>
+          <!-- TODO: replace with a screenshot of the Apple Pencil note card or a finished guest-book page -->
+          <div class="media media--todo"><p><b>Guest book</b>Screenshot coming soon</p></div>
+        </div>
+      </section>
+
+      <section id="website" class="cs-section">
+        <p class="eyebrow">06 — The website</p>
+        <h2 class="h2">The studio’s front door</h2>
+        <div class="prose">
+          <p>I also designed and built the Momento website, a simple, fast site that explains the experience, shows the portraits, and takes inquiries through a contact form. Its colours match the app, so the brand feels the same from the first visit to the print in a guest’s hand.</p>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- WHAT'S NEXT -->
+<section id="next-steps" class="takeaways section">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">07 — What’s next</p>
+      <h2 class="h2">Getting ready for launch</h2>
+    </div>
+    <div class="prose">
+      <p>Momento is launching soon. Before our first events, we’re testing the full setup on our exact hardware: the direct connection with no network at all, and print sizing on our 4×6 printer.</p>
+      <p>Building Momento meant designing for people I’d meet face to face: guests in the middle of a celebration, and my own team running the station. Every decision came back to one question: does this keep the line moving and the night fun?</p>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT PROJECT -->
+<a class="next" href="remembra.html">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Next project</p>
+      <h2>Remembra</h2>
+    </div>
+    <span class="next__arrow" aria-hidden="true">→</span>
+  </div>
+</a>
+
+<!-- CONTACT -->
+<footer id="contact" class="contact section">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 class="h2">Let’s work together.</h2>
+    <p class="contact__sub">Interested in UX, technical support, and the people side of technology.</p>
+    <div class="contact__actions">
+      <a href="mailto:ethanmandel@protonmail.com" class="btn btn--red">Email Me</a>
+      <a href="resume.pdf" class="btn btn--line" target="_blank" rel="noopener">View resume</a>
+    </div>
+    <div class="contact__meta">
+      <span>© 2026 Ethan Mandel</span>
+      <a href="mailto:ethanmandel@protonmail.com">ethanmandel@protonmail.com</a>
+      <span>Rancho Cucamonga, CA</span>
+      <a href="https://www.linkedin.com/in/ethanwmandel/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/case-study.js?v=2"></script>
+</body>
+</html>
