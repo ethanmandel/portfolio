@@ -90,26 +90,41 @@
 .quotes blockquote:first-child { grid-column: 1 / -1; font-size: 21px; font-weight: 600; letter-spacing: -.01em; }
 
 /* Momento: hero prints, numbered steps, and screenshot placeholders */
-.hero-prints { position: relative; aspect-ratio: 1 / 1; }
-.hero-prints img {
-  position: absolute; top: 8%; width: 46%;
-  background: #fff; padding: 4%; /* even border all round, like the real 4x6 prints */
-  box-shadow: 0 1px 3px rgba(0,0,0,.08);
-  animation: rise .6s cubic-bezier(.3,1.12,.6,1) both;
-}
-.hero-prints img:nth-child(1) { left: 4%; transform: rotate(-6deg); }
-.hero-prints img:nth-child(2) { right: 4%; top: 12%; transform: rotate(5deg); animation-delay: .08s; }
+/* Hero: Mac operator app with the iPad guest app overlapping in front */
+.hero-devices { position: relative; aspect-ratio: 1.3 / 1; }
+.hero-devices img { position: absolute; animation: rise .6s cubic-bezier(.3,1.12,.6,1) both; }
+.hero-devices .duo__mac { left: 0; top: 6%; width: 90%; }
+.hero-devices .duo__ipad { right: 0; bottom: 2%; width: 50%; animation-delay: .1s; }
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .steps div { border-top: 2px solid var(--red); padding-top: 14px; }
 .steps b { display: block; font-size: 13px; letter-spacing: .14em; color: var(--red); margin-bottom: 10px; }
 .steps h3 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
 .steps p { font-size: 15px; line-height: 1.55; color: var(--body); }
-/* stand-in until a screenshot is supplied; swap the div for an <img> inside .media */
-.media--todo {
-  aspect-ratio: 16 / 10; display: grid; place-items: center; text-align: center;
-  border: 1.5px dashed rgba(17,17,17,.18); color: var(--muted); font-size: 14px; line-height: 1.5;
+
+/* Momento: a wall of 4×6 prints, the logo panel, and inline red links */
+.print-wall {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4%;
+  background: var(--silver); border-radius: 22px; padding: 6%;
 }
-.media--todo b { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
+.print-wall img { width: 100%; background: #fff; padding: 5%; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.print-wall img:nth-child(odd) { transform: rotate(-1.5deg); }
+.print-wall img:nth-child(even) { transform: rotate(1.5deg); }
+.logo-panel { background: var(--black); border-radius: 22px; padding: 9% 12%; display: grid; place-items: center; }
+.logo-panel img { width: 100%; max-width: 420px; }
+.text-link { color: var(--red); font-weight: 600; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
+.text-link::after { content: " ↗"; }
+
+/* iPad frame drawn in CSS, so plain screenshots can be swapped in any time.
+   Even dark bezel, rounded corners, a faint edge highlight, sat on a silver panel. */
+.device-stage { background: var(--silver); border-radius: 22px; padding: 7% 8%; display: grid; place-items: center; }
+.ipad {
+  width: 100%; padding: 3.2%;
+  background: #1a1a1a; border-radius: 6.5% / 9.3%;
+  box-shadow: inset 0 0 0 1.5px #3a3a3a, 0 1px 3px rgba(0,0,0,.12);
+}
+.ipad img { width: 100%; border-radius: 3.6% / 5.1%; }
+.device-shot { width: 100%; }
+.device-row { width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6%; }
 
 /* TAKEAWAYS: red, like the About section on the homepage */
 .takeaways { background: var(--red); color: #fbf3f1; }
@@ -144,13 +159,15 @@
   .prose { font-size: 17px; }
   .stats, .features, .gallery--2, .gallery--3, .paths, .quotes { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
-  .hero-prints { width: 100%; max-width: 320px; margin: 36px auto 0; }
+  .print-wall { gap: 5%; padding: 7%; }
+  .device-row { grid-template-columns: 1fr; gap: 20px; }
+  .hero-devices { width: 100%; max-width: 420px; margin: 36px auto 0; }
   .quotes blockquote:first-child { font-size: 18px; }
   .rows div { grid-template-columns: 1fr; gap: 4px; }
   .takeaways .wrap { grid-template-columns: 1fr; gap: 24px; }
   .next .wrap { padding-top: 48px; padding-bottom: 48px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lineup img, .hero-prints img { animation: none; }
+  .lineup img, .hero-devices img { animation: none; }
   .next__arrow { transition: none; }
 }

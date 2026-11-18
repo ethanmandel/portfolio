@@ -27,8 +27,6 @@
     .hero h1 strong { color: var(--red); font-weight: 700; }
     .hero--wrapped .hero__lede { display: none !important; }
     .hero__lede { font-size: 21px; line-height: 1.5; color: #2c2925; max-width: 500px; }
-    .hero__eyebrow { font-size: 14px; line-height: 1.8; margin-bottom: 28px; }
-    .hero__eyebrow span { display: block; }
     /* the hero links are underlined text, like the project card links */
     .hero__actions { display: grid; justify-items: start; gap: 16px; margin-top: 36px; }
     .hero__link {
@@ -85,7 +83,6 @@
     /* WORK */
     .work { background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .work__head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 48px; }
-    .work__head p { font-size: 17px; color: var(--muted); max-width: 420px; line-height: 1.5; }
     .projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .project { display: flex; flex-direction: column; }
     .project__cover {
@@ -130,16 +127,11 @@
       display: grid; grid-template-columns: 1.45fr 1fr; gap: 56px; align-items: center;
     }
     .feature__cover { position: relative; aspect-ratio: 16 / 10; border-radius: 22px; overflow: hidden; background: #f2f2f2; }
-    .print {
-      position: absolute; top: 13%; width: 25%;
-      background: #fff; padding: 2.4%; /* even border all round, like the real 4x6 prints */
-      box-shadow: 0 1px 3px rgba(0,0,0,.08);
-      transition: transform .4s cubic-bezier(.3,1.12,.6,1);
-    }
-    .print--1 { left: 26%; transform: rotate(-5deg); }
-    .print--2 { left: 49%; transform: rotate(4deg) translateY(4%); }
-    .project--feature:hover .print--1, .project--feature:focus-visible .print--1 { transform: translateX(-16%) rotate(-8deg); }
-    .project--feature:hover .print--2, .project--feature:focus-visible .print--2 { transform: translateX(16%) rotate(7deg) translateY(4%); }
+    .duo__mac, .duo__ipad { position: absolute; transition: transform .4s cubic-bezier(.3,1.12,.6,1); }
+    .duo__mac { left: 5%; top: 9%; width: 74%; }
+    .duo__ipad { right: 5%; bottom: 7%; width: 40%; }
+    .project--feature:hover .duo__ipad, .project--feature:focus-visible .duo__ipad { transform: translateY(-5%); }
+    .project--feature:hover .duo__mac, .project--feature:focus-visible .duo__mac { transform: translateY(-2%); }
     .feature__body { display: flex; flex-direction: column; }
     .feature__body .project__info { padding-top: 0; }
     .project--feature h3 { font-size: 34px; }
@@ -162,7 +154,6 @@
       .strip__reel { left: 18px; right: 18px; gap: 10px; }
       .hero .wrap > div:first-child { position: relative; z-index: 3; flex: 1; min-width: 0; }
       .hero__lede { display: none; }
-      .hero__eyebrow { font-size: 12px; margin-bottom: 22px; }
       .hero h1 { font-size: clamp(39px, 8vw, 60px); margin-bottom: 0; }
       .hero__actions { gap: 14px; margin-top: 28px; }
       .hero__link { font-size: 17px; }
@@ -178,7 +169,6 @@
       .projects { grid-template-columns: 1fr; gap: 48px; }
       .project--feature { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
       .feature__cover { aspect-ratio: 3 / 2; }
-      .print { width: 28%; top: 9%; }
       .feature__body .project__info { padding-top: 22px; }
       .project--feature h3 { font-size: 24px; }
       .project--feature .project__desc { font-size: 15px; }
@@ -191,7 +181,7 @@
       .projects .tile--4 { left: 75.5cqw; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .shot, .tile, .print { transition: none; }
+      .shot, .tile, .duo__mac, .duo__ipad { transition: none; }
     }
   </style>
 </head>
@@ -213,7 +203,6 @@
 <header id="top" class="hero">
   <div class="wrap">
     <div>
-      <p class="eyebrow hero__eyebrow"><span>Technology</span><span>Design</span><span>Photography</span></p>
       <h1>Hey, I’m <strong>Ethan</strong>.</h1>
       <p class="hero__lede">I’m an informatics graduate from UC Irvine who enjoys figuring out how things work and making things of my own. My work brings together my interests in technology, design, and photography.</p>
       <div class="hero__actions">
@@ -242,7 +231,6 @@
 <section id="about" class="about section">
   <div class="wrap">
     <div>
-      <p class="eyebrow">About me</p>
       <h2 class="h2">A little behind the lens.</h2>
     </div>
     <div class="about__body">
@@ -258,19 +246,16 @@
   <div class="wrap">
     <div class="work__head">
       <div>
-        <p class="eyebrow">Featured projects</p>
         <h2 class="h2">Selected work</h2>
       </div>
-      <p>Research, visuals, and the experience in between.</p>
     </div>
 
     <div class="projects">
-      <!-- Featured: Momento. The cover shows the product's output, two 4×6 prints;
-           swap in app screenshots here once they exist -->
+      <!-- Featured: Momento. The cover shows the Mac operator app with the iPad guest app in front -->
       <a class="project project--feature" href="momento.html">
         <div class="feature__cover">
-          <img class="print print--1" src="images/momento/portrait-1.webp" alt="Black-and-white Momento portrait print of a guest holding a small dog" width="700" height="1050" />
-          <img class="print print--2" src="images/momento/portrait-2.webp" alt="Black-and-white Momento portrait print of a smiling guest in glasses" width="700" height="1051" />
+          <img class="duo__mac" src="images/momento/mac-live-gallery.webp" alt="The Momento Mac operator app on a MacBook, showing the Live Gallery of guest groups" width="1600" height="1040" />
+          <img class="duo__ipad" src="images/momento/ipad-gallery-framed.webp" alt="The Momento iPad guest app showing the gallery of portrait groups" width="1000" height="774" />
         </div>
         <div class="feature__body">
           <div class="project__info">
