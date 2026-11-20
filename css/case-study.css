@@ -30,13 +30,13 @@
 
 /* BODY: sticky contents + reading column */
 .cs-body { background: #fff; }
-.cs-body .wrap { display: grid; grid-template-columns: 200px 1fr; gap: 72px; }
+.cs-body .wrap { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 72px; }
 .toc { position: sticky; top: calc(var(--nav-h) + 40px); align-self: start; display: grid; gap: 10px; font-size: 14px; }
 .toc p { font-size: 12px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
 .toc a { color: var(--muted); padding-left: 12px; border-left: 2px solid transparent; transition: color .2s, border-color .2s; }
 .toc a:hover { color: var(--ink); }
 .toc a[aria-current] { color: var(--ink); border-color: var(--red); }
-.cs-content { max-width: 820px; display: grid; gap: 96px; }
+.cs-content { max-width: 820px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 96px; }
 .cs-section { scroll-margin-top: calc(var(--nav-h) + 32px); }
 .cs-section .h2 { margin-bottom: 24px; }
 .prose { display: grid; gap: 20px; font-size: 18px; line-height: 1.7; color: var(--body); max-width: 680px; }
@@ -65,7 +65,7 @@
 .rows dd { color: var(--muted); }
 
 /* Building blocks used by the longer case studies */
-.flow { display: grid; gap: 28px; }
+.flow { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; }
 .h3 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; margin-top: 12px; }
 .media { background: var(--silver); border-radius: 22px; padding: 6%; display: grid; place-items: center; }
 /* most screenshots sit on white; multiply lets the silver show through */
@@ -127,7 +127,7 @@
 
 /* Remembra: iPhone mockups (mockuphone frames with transparent backgrounds) */
 .lineup--mock img { border-radius: 0; }
-.features--stack { grid-template-columns: 1fr; gap: 72px; }
+.features--stack { grid-template-columns: minmax(0, 1fr); gap: 72px; }
 .features--stack .feature p { max-width: 600px; }
 .mock-fan, .mock-swipe, .mock-states, .mock-seq { background: var(--silver); border-radius: 22px; margin-bottom: 18px; }
 .mock-fan img, .mock-swipe img, .mock-states img, .mock-seq img { filter: drop-shadow(0 14px 20px rgba(0,0,0,.16)); }
@@ -211,6 +211,12 @@
 .lag-open figure { margin: 0; }
 .lag-open img { width: 100%; }
 
+/* Keep every column to the screen width. Safari sizes a plain 1fr column to its widest
+   content, so the scrollable phone rows were pushing the whole page wider than the phone. */
+.cs-body .wrap > *, .cs-content, .cs-content > *, .cs-section > *, .flow > *, .features > *, .gallery > *, figure { min-width: 0; }
+.mock-swipe, .mock-fan, .mock-states, .mock-seq, .compare, .lag-duo { max-width: 100%; overflow: hidden; }
+.mock-swipe__track { width: 100%; }
+
 /* TAKEAWAYS: red, like the About section on the homepage */
 .takeaways { background: var(--red); color: #fbf3f1; }
 .takeaways .eyebrow { color: rgba(255,255,255,.65); }
@@ -236,11 +242,11 @@
   .facts { grid-template-columns: 1fr 1fr; gap: 16px 20px; margin-top: 36px; padding-top: 18px; }
   .facts dt { font-size: 11px; margin-bottom: 4px; }
   .facts dd { font-size: 14px; }
-  .cs-body .wrap { grid-template-columns: 1fr; }
+  .cs-body .wrap { grid-template-columns: minmax(0, 1fr); }
   .toc { display: none; }
   .cs-content { gap: 72px; }
   .prose { font-size: 17px; }
-  .stats, .features, .gallery--2, .gallery--3, .paths, .quotes { grid-template-columns: 1fr; }
+  .stats, .features, .gallery--2, .gallery--3, .paths, .quotes { grid-template-columns: minmax(0, 1fr); }
   .mock-swipe__track::before, .mock-swipe__track::after { flex-basis: 21%; }
   .mock-swipe__slide { flex-basis: 50%; }
   .mock-states__phone { width: 52%; }
