@@ -10,7 +10,7 @@
   <meta property="og:image" content="https://mandelethan.com/images/home/og.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css?v=2" />
-  <link rel="stylesheet" href="css/case-study.css?v=7" />
+  <link rel="stylesheet" href="css/case-study.css?v=8" />
 </head>
 <body>
 
@@ -29,18 +29,17 @@
 <header class="cs-hero">
   <div class="wrap">
     <div>
-      <a href="index.html#work" class="back"><span aria-hidden="true">←</span> All work</a>
+      <a href="index.html#work" class="back">All work</a>
       <p class="eyebrow">Nonprofit website redesign</p>
       <h1>Laguna Ocean Foundation</h1>
       <p class="cs-hero__lede">Redesigning an educational tidepool site to improve usability, mobile accessibility, and visitor engagement for families, students, and beachgoers.</p>
       <div class="cs-hero__actions">
-        <a href="https://laguna-ocean-foundation-six.vercel.app/" class="btn btn--red" target="_blank" rel="noopener">View live site <span aria-hidden="true">↗</span></a>
+        <a href="https://laguna-ocean-foundation-six.vercel.app/" class="btn btn--red" target="_blank" rel="noopener">View live site</a>
       </div>
     </div>
-    <div class="lineup" aria-hidden="true">
-      <img src="images/home/cards/laguna-charts.webp" alt="" />
-      <img src="images/home/cover-laguna.webp" alt="" />
-      <img src="images/home/cards/laguna-species.webp" alt="" />
+    <div class="lag-duo lag-duo--hero" aria-hidden="true">
+      <img class="lag-duo__mac" src="images/laguna/mockups/mac-home.webp" alt="" width="1400" height="845" />
+      <img class="lag-duo__phone" src="images/laguna/mockups/phone-home.webp" alt="" width="640" height="1300" />
     </div>
     <dl class="facts">
       <div><dt>Role</dt><dd>Lead Dev / UX</dd></div>
@@ -77,13 +76,18 @@
             <p>The existing site contained useful information, but the experience felt unfinished, difficult to navigate, and inconsistent across devices. Important content such as species information, tidepool locations, and tide schedules was either hard to locate or lacked visual engagement.</p>
           </div>
           <figure>
-            <div class="gallery gallery--2">
-              <div class="media media--bleed"><img src="images/laguna/web/oldhero.webp" alt="Original Laguna site homepage" width="1600" height="842" loading="lazy" /></div>
-              <div class="media media--bleed"><img src="images/laguna/web/oldguide.webp" alt="Original Laguna species guide" width="1600" height="841" loading="lazy" /></div>
-              <div class="media media--bleed"><img src="images/laguna/web/oldfaq.webp" alt="Original Laguna FAQ page" width="1600" height="841" loading="lazy" /></div>
-              <div class="media media--bleed"><img src="images/laguna/web/oldmap.webp" alt="Original Laguna map page" width="1600" height="834" loading="lazy" /></div>
+            <div class="mock-swipe mock-swipe--mac" data-swipe>
+              <div class="mock-swipe__track" tabindex="0" aria-label="Pages of the original site, scroll sideways to see each one">
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/mac-old-home.webp" alt="Original homepage with stacked buttons" width="1400" height="845" loading="lazy" /><span>Home</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/mac-old-plan-your-trip.webp" alt="Original Plan Your Trip page, a narrow column of text" width="1400" height="845" loading="lazy" /><span>Plan Your Trip</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/mac-old-locations-map.webp" alt="Original locations page, a full-width map with no context" width="1400" height="845" loading="lazy" /><span>Locations map</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/mac-old-locations-list.webp" alt="Original list of tidepool locations" width="1400" height="845" loading="lazy" /><span>Locations list</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/mac-old-species.webp" alt="Original species guide with small thumbnails" width="1400" height="845" loading="lazy" /><span>Species Guide</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/mac-old-faqs.webp" alt="Original FAQ page" width="1400" height="845" loading="lazy" /><span>FAQs</span></div>
+              </div>
+              <div class="mock-swipe__dots" role="group" aria-label="Go to page"></div>
             </div>
-            <figcaption class="caption">The original site, as referenced in the project documentation.</figcaption>
+            <figcaption class="caption">The original site, page by page.</figcaption>
           </figure>
           <div class="prose">
             <p>Our team inherited both the previous codebase and existing project materials from an earlier capstone team. That meant balancing redesign work with understanding an established technical structure, and adapting to evolving stakeholder feedback throughout development.</p>
@@ -289,6 +293,22 @@
             <li>Improved accessibility and keyboard navigation</li>
             <li>Visual consistency across pages</li>
           </ul>
+          <figure>
+            <div class="lag-duo lag-duo--panel">
+              <img src="images/laguna/mockups/mac-plan-maps.webp" alt="Plan Your Trip on desktop, with the Tidepool Maps and Marine Protected Areas sections" width="1400" height="845" loading="lazy" class="lag-duo__mac" />
+              <img src="images/laguna/mockups/phone-plan-chart.webp" alt="Plan Your Trip on a phone, with the live tide chart" width="640" height="1300" loading="lazy" class="lag-duo__phone" />
+            </div>
+            <figcaption class="caption">Plan Your Trip on desktop and on a phone, with the live tide chart embedded.</figcaption>
+          </figure>
+          <figure>
+            <div class="mock-seq mock-seq--4">
+              <div><img src="images/laguna/mockups/phone-locations.webp" alt="The locations page on a phone" width="640" height="1300" loading="lazy" /><span>Pick a tidepool</span></div>
+              <div><img src="images/laguna/mockups/phone-location-detail.webp" alt="Heisler Park expanded with accessibility, coordinates, access point and parking" width="640" height="1300" loading="lazy" /><span>Details expand</span></div>
+              <div><img src="images/laguna/mockups/phone-species.webp" alt="The species guide on a phone" width="640" height="1300" loading="lazy" /><span>Browse species</span></div>
+              <div><img src="images/laguna/mockups/phone-species-card.webp" alt="The Brown Pelican species card open, with a photo carousel" width="640" height="1300" loading="lazy" /><span>Open a card</span></div>
+            </div>
+            <figcaption class="caption">Locations and species open in place, so visitors never lose their spot.</figcaption>
+          </figure>
           <div class="prose">
             <p>A primary focus was the interactive species guide: alphabetized organization, expandable popup cards, better imagery, improved mobile usability, and keyboard event handling for accessibility.</p>
             <p>Because the project inherited an existing codebase, development also meant understanding prior architectural decisions while restructuring parts of the frontend to support the redesigned experience. The project became a strong balance between UX thinking and frontend execution.</p>
@@ -311,14 +331,54 @@
         <p class="eyebrow">09 — Final outcome</p>
         <h2 class="h2">A more cohesive and engaging educational experience</h2>
         <div class="flow">
-          <div class="gallery gallery--2">
-            <div class="media media--bleed"><img src="images/laguna/web/final1.webp" alt="Final Laguna site, screen one" width="1600" height="864" loading="lazy" /></div>
-            <div class="media media--bleed"><img src="images/laguna/web/final2.webp" alt="Final Laguna site, screen two" width="1600" height="868" loading="lazy" /></div>
-            <div class="media media--bleed"><img src="images/laguna/web/final3.webp" alt="Final Laguna site, screen three" width="1600" height="855" loading="lazy" /></div>
-            <div class="media media--bleed"><img src="images/laguna/web/final4.webp" alt="Final Laguna site, screen four" width="1600" height="871" loading="lazy" /></div>
-            <div class="media media--bleed"><img src="images/laguna/web/final5.webp" alt="Final Laguna site, screen five" width="1600" height="863" loading="lazy" /></div>
-            <div class="media media--bleed"><img src="images/laguna/web/final6.webp" alt="Final Laguna site, screen six" width="1600" height="866" loading="lazy" /></div>
+          <div class="compare" data-compare>
+            <div class="compare__screen">
+                <img src="images/laguna/mockups/mac-home.webp" alt="Redesigned Home page" width="1400" height="845" loading="lazy" data-page="0" data-when="after" />
+                <img src="images/laguna/mockups/mac-old-home.webp" alt="Original Home page" width="1400" height="845" loading="lazy" data-page="0" data-when="before" />
+                <img src="images/laguna/mockups/mac-plan-your-trip.webp" alt="Redesigned Plan Your Trip page" width="1400" height="845" loading="lazy" data-page="1" data-when="after" />
+                <img src="images/laguna/mockups/mac-old-plan-your-trip.webp" alt="Original Plan Your Trip page" width="1400" height="845" loading="lazy" data-page="1" data-when="before" />
+                <img src="images/laguna/mockups/mac-locations.webp" alt="Redesigned Locations page" width="1400" height="845" loading="lazy" data-page="2" data-when="after" />
+                <img src="images/laguna/mockups/mac-old-locations-map.webp" alt="Original Locations page" width="1400" height="845" loading="lazy" data-page="2" data-when="before" />
+                <img src="images/laguna/mockups/mac-species.webp" alt="Redesigned Species page" width="1400" height="845" loading="lazy" data-page="3" data-when="after" />
+                <img src="images/laguna/mockups/mac-old-species.webp" alt="Original Species page" width="1400" height="845" loading="lazy" data-page="3" data-when="before" />
+                <img src="images/laguna/mockups/mac-faqs.webp" alt="Redesigned FAQs page" width="1400" height="845" loading="lazy" data-page="4" data-when="after" />
+                <img src="images/laguna/mockups/mac-old-faqs.webp" alt="Original FAQs page" width="1400" height="845" loading="lazy" data-page="4" data-when="before" />
+            </div>
+            <div class="compare__controls">
+              <div class="compare__when" role="group" aria-label="Show the original or the redesign">
+                <button type="button" data-when="before" aria-pressed="false">Before</button>
+                <button type="button" data-when="after" aria-pressed="true">After</button>
+              </div>
+              <div class="compare__pages" role="group" aria-label="Page">
+                <button type="button" data-page="0" aria-pressed="true">Home</button>
+                <button type="button" data-page="1" aria-pressed="false">Plan Your Trip</button>
+                <button type="button" data-page="2" aria-pressed="false">Locations</button>
+                <button type="button" data-page="3" aria-pressed="false">Species</button>
+                <button type="button" data-page="4" aria-pressed="false">FAQs</button>
+              </div>
+            </div>
           </div>
+          <p class="caption">Switch between the original site and the redesign, page by page.</p>
+          <div class="gallery gallery--2 lag-open">
+            <figure><img src="images/laguna/mockups/mac-location-detail.webp" alt="Heisler Park expanded on desktop, with its photo, description and visitor details" width="1400" height="845" loading="lazy" /><figcaption class="caption">Every tidepool expands to show access, parking and what you’ll see.</figcaption></figure>
+            <figure><img src="images/laguna/mockups/mac-species-card.webp" alt="The Brown Pelican species card open on desktop" width="1400" height="845" loading="lazy" /><figcaption class="caption">Species open in a card with a photo carousel.</figcaption></figure>
+          </div>
+          <figure>
+            <div class="mock-swipe" data-swipe>
+              <div class="mock-swipe__track" tabindex="0" aria-label="The redesign on a phone, scroll sideways to see each page">
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-home.webp" alt="Home on a phone" width="640" height="1300" loading="lazy" /><span>Home</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-plan-top.webp" alt="Plan Your Trip on a phone" width="640" height="1300" loading="lazy" /><span>Plan Your Trip</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-plan-chart.webp" alt="Tide chart on a phone" width="640" height="1300" loading="lazy" /><span>Tide chart</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-locations.webp" alt="Locations on a phone" width="640" height="1300" loading="lazy" /><span>Locations</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-location-detail.webp" alt="A location, opened on a phone" width="640" height="1300" loading="lazy" /><span>A location, opened</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-species.webp" alt="Species Guide on a phone" width="640" height="1300" loading="lazy" /><span>Species Guide</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-species-card.webp" alt="A species card on a phone" width="640" height="1300" loading="lazy" /><span>A species card</span></div>
+                <div class="mock-swipe__slide"><img src="images/laguna/mockups/phone-faqs.webp" alt="FAQs on a phone" width="640" height="1300" loading="lazy" /><span>FAQs</span></div>
+              </div>
+              <div class="mock-swipe__dots" role="group" aria-label="Go to page"></div>
+            </div>
+            <figcaption class="caption">The whole redesign works on a phone, for visitors already at the beach.</figcaption>
+          </figure>
           <h3 class="h3">Key improvements</h3>
           <ul class="ticks">
             <li>Fully redesigned responsive interface</li>
@@ -362,14 +422,12 @@
       <p class="eyebrow">Next project</p>
       <h2>Doorway</h2>
     </div>
-    <span class="next__arrow" aria-hidden="true">→</span>
   </div>
 </a>
 
 <!-- CONTACT -->
 <footer id="contact" class="contact section">
   <div class="wrap">
-    <p class="eyebrow">Contact</p>
     <h2 class="h2">Let’s work together.</h2>
     <p class="contact__sub">Interested in UX, technical support, and the people side of technology.</p>
     <div class="contact__actions">
@@ -385,6 +443,7 @@
   </div>
 </footer>
 
-<script src="js/case-study.js?v=2"></script>
+<script src="js/case-study.js?v=3"></script>
+<script src="js/nav.js"></script>
 </body>
 </html>

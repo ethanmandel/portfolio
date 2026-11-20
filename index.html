@@ -37,7 +37,6 @@
     }
     .hero__link:hover { gap: 14px; }
     .hero__link--red { color: var(--red); }
-    .hero__link::after { content: "↗"; }
 
     /* Film strip: runs the full height of the hero, hard cut under the nav,
        and resolves into the About section's red at the bottom */
@@ -90,28 +89,25 @@
       background: #f2f2f2;
       container-type: inline-size; /* tiles are placed in cqw = 1% of panel width */
     }
-    /* Rest: one big phone. Hover: it shrinks into the top-left slot and three
-       more screens fade in while rising a short way, filling a staggered
-       two-column collage that runs off the top and bottom of the panel. */
-    .shot, .tile {
-      position: absolute; border-radius: 18px; overflow: hidden;
-      transform-origin: 0 0;
-      transition: transform .4s cubic-bezier(.3,1.12,.6,1), opacity .3s ease;
-    }
-    .shot { z-index: 2; left: 19cqw; top: 14cqw; width: 62cqw; }
-    .tile { z-index: 1; width: 40cqw; border-radius: 12px; transform: translateY(14cqw); opacity: 0; }
-    .tile--2 { left: 52cqw; top: -20cqw; }
-    .tile--3 { left: 8cqw;  top: 99cqw; }
-    .tile--4 { left: 52cqw; top: 71cqw; }
-    .project:hover .shot, .project:focus-visible .shot { transform: translate(-11cqw, -6cqw) scale(.645); }
-    .project:hover .tile, .project:focus-visible .tile { transform: none; opacity: 1; }
-    .project:hover .tile--2, .project:focus-visible .tile--2 { transition-delay: .03s; }
-    .project:hover .tile--4, .project:focus-visible .tile--4 { transition-delay: .07s; }
-    .project:hover .tile--3, .project:focus-visible .tile--3 { transition-delay: .11s; }
-    /* touch screens have no hover: show the collage at rest */
+    /* Phone mockups. Rest: one phone. Hover: two more fan out from behind it. */
+    .fan img { position: absolute; top: 15cqw; width: 46cqw; left: 27cqw;
+      transition: transform .45s cubic-bezier(.3,1.12,.6,1); }
+    .fan img:nth-child(1) { z-index: 2; }
+    .fan img:nth-child(2), .fan img:nth-child(3) { z-index: 1; transform: scale(.9) translateY(4cqw); }
+    .project:hover .fan img:nth-child(1), .project:focus-visible .fan img:nth-child(1) { transform: translateY(-3cqw); }
+    .project:hover .fan img:nth-child(2), .project:focus-visible .fan img:nth-child(2) { transform: translate(-25cqw, 6cqw) rotate(-9deg) scale(.88); }
+    .project:hover .fan img:nth-child(3), .project:focus-visible .fan img:nth-child(3) { transform: translate(25cqw, 6cqw) rotate(9deg) scale(.88); }
+    /* Laguna: the MacBook with the phone standing in front of its corner */
+    .lap img { position: absolute; transition: transform .45s cubic-bezier(.3,1.12,.6,1); }
+    .lap__mac { left: 3cqw; top: 26cqw; width: 88cqw; }
+    .lap__phone { left: 62cqw; top: 47cqw; width: 30cqw; z-index: 1; }
+    .project:hover .lap__mac, .project:focus-visible .lap__mac { transform: translateY(-3cqw); }
+    .project:hover .lap__phone, .project:focus-visible .lap__phone { transform: translateY(-7cqw); }
+    /* touch screens have no hover: show the fan open */
     @media (hover: none) {
-      .shot { transform: translate(-11cqw, -6cqw) scale(.645); }
-      .tile { transform: none; opacity: 1; }
+      .fan img:nth-child(1) { transform: translateY(-3cqw); }
+      .fan img:nth-child(2) { transform: translate(-25cqw, 6cqw) rotate(-9deg) scale(.88); }
+      .fan img:nth-child(3) { transform: translate(25cqw, 6cqw) rotate(9deg) scale(.88); }
     }
     .project__info { padding-top: 22px; }
     .project__type { font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
@@ -172,16 +168,18 @@
       .feature__body .project__info { padding-top: 22px; }
       .project--feature h3 { font-size: 24px; }
       .project--feature .project__desc { font-size: 15px; }
-      /* phones: a wide panel with all four screens in one row, always shown */
+      /* phones: a wide panel with the three phones side by side, always open */
       .projects .project__cover { aspect-ratio: 3 / 2; }
-      .projects .project .shot { transform: translate(-15.5cqw, -4cqw) scale(.339); transition: none; }
-      .projects .project .tile { width: 21cqw; top: 10cqw; border-radius: 6px; transform: none; opacity: 1; transition: none; }
-      .projects .tile--2 { left: 27.5cqw; }
-      .projects .tile--3 { left: 51.5cqw; }
-      .projects .tile--4 { left: 75.5cqw; }
+      .projects .fan img { top: 9cqw; width: 26cqw; left: 37cqw; transition: none; }
+      .projects .fan img:nth-child(1) { transform: none; }
+      .projects .fan img:nth-child(2) { transform: translate(-28cqw, 3cqw) rotate(-6deg) scale(.92); }
+      .projects .fan img:nth-child(3) { transform: translate(28cqw, 3cqw) rotate(6deg) scale(.92); }
+      .projects .lap img { transition: none; transform: none; }
+      .projects .lap__mac { left: 6cqw; top: 10cqw; width: 74cqw; }
+      .projects .lap__phone { left: 70cqw; top: 14cqw; width: 22cqw; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .shot, .tile, .duo__mac, .duo__ipad { transition: none; }
+      .fan img, .lap img, .duo__mac, .duo__ipad { transition: none; }
     }
   </style>
 </head>
@@ -214,7 +212,7 @@
     <div class="strip">
       <div class="strip__layer">
         <div class="strip__edge strip__edge--l" aria-hidden="true"><span>KODAK PORTRA 400 &nbsp;&nbsp; 8 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 9 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 10 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 11 &nbsp;&nbsp; KODAK PORTRA 400 &nbsp;&nbsp; 12 &nbsp;&nbsp; KODAK PORTRA 400</span></div>
-        <div class="strip__edge strip__edge--r" aria-hidden="true"><span>▸ 8A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 9A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 10A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 11A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▸ 12</span></div>
+        <div class="strip__edge strip__edge--r" aria-hidden="true"><span>8A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 9A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 11A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 12</span></div>
         <div class="strip__reel">
           <div class="strip__frame"><img src="images/home/film-wheel.webp" alt="Looking up at a lit Ferris wheel at night" width="700" height="1050" /></div>
           <div class="strip__frame"><img src="images/home/film-waterfall.webp" alt="Waterfall pouring down a streaked granite cliff" width="700" height="1050" /></div>
@@ -236,7 +234,6 @@
     <div class="about__body">
       <p>I’m a designer with a background in Informatics and Human-Computer Interaction from UC Irvine, but a lot of my interests outside of tech shape the way I approach creative work. I grew up playing flute and oboe, spent time performing in wind ensemble, and still spend way too much time listening to music, going to concerts, and talking about pop culture with friends.</p>
       <p>I also love shooting on film. Most of the photos I take are of friends, concerts, events, and moments that feel personal. I like that film forces you to slow down and actually think about composition instead of taking hundreds of photos at once.</p>
-      <p>A lot of the work I enjoy sits somewhere between design, technology, music, and visual culture. I’m naturally pretty outgoing and collaborative, and I like projects that feel creative, visually interesting, and human instead of overly corporate.</p>
     </div>
   </div>
 </section>
@@ -259,7 +256,7 @@
         </div>
         <div class="feature__body">
           <div class="project__info">
-            <p class="project__type">Studio &amp; software · New</p>
+            <p class="project__type">Studio &amp; software</p>
             <h3>Momento</h3>
             <p class="project__desc">Wedding portraits, printed on the spot. A portrait studio I co-run, with a Mac app and an iPad app I designed and built to run it.</p>
             <p class="project__meta">Co-founder · Design &amp; software · SwiftUI</p>
@@ -269,10 +266,11 @@
       </a>
       <a class="project" href="remembra.html">
         <div class="project__cover">
-          <img class="tile tile--2" src="images/home/cards/remembra-profile.webp" alt="Remembra profile screen with top tracks and weekly listening" />
-          <img class="tile tile--3" src="images/home/cards/remembra-quiz.webp" alt="Remembra memory game quiz screen" />
-          <img class="tile tile--4" src="images/home/cards/remembra4.webp" alt="Remembra song library screen" />
-          <img class="shot" src="images/home/cover-remembra.webp" alt="Remembra now playing screen" loading="lazy" />
+          <div class="fan">
+            <img src="images/remembra/mockups/now-playing.webp" alt="Remembra now playing screen on an iPhone" width="640" height="1300" loading="lazy" />
+            <img src="images/remembra/mockups/my-profile.webp" alt="Remembra profile screen with top tracks and weekly listening" width="640" height="1300" loading="lazy" />
+            <img src="images/remembra/mockups/memory-game-right.webp" alt="Remembra memory game with the right answer highlighted" width="640" height="1300" loading="lazy" />
+          </div>
         </div>
         <div class="project__info">
           <p class="project__type">App concept</p>
@@ -284,10 +282,10 @@
       </a>
       <a class="project" href="laguna.html">
         <div class="project__cover">
-          <img class="tile tile--3" src="images/home/cards/laguna-faqs.webp" alt="Laguna Ocean Foundation FAQ page" />
-          <img class="tile tile--2" src="images/home/cards/laguna-charts.webp" alt="Laguna Ocean Foundation tidepool charts page" />
-          <img class="tile tile--4" src="images/home/cards/laguna-species.webp" alt="Laguna Ocean Foundation species guide page" />
-          <img class="shot" src="images/home/cover-laguna.webp" alt="Laguna Ocean Foundation mobile homepage" loading="lazy" />
+          <div class="lap">
+            <img class="lap__mac" src="images/laguna/mockups/mac-home.webp" alt="Laguna Ocean Foundation redesigned homepage on a MacBook" width="1400" height="845" loading="lazy" />
+            <img class="lap__phone" src="images/laguna/mockups/phone-home.webp" alt="Laguna Ocean Foundation homepage on an iPhone" width="640" height="1300" loading="lazy" />
+          </div>
         </div>
         <div class="project__info">
           <p class="project__type">Website redesign</p>
@@ -299,10 +297,11 @@
       </a>
       <a class="project" href="doorway.html">
         <div class="project__cover">
-          <img class="tile tile--2" src="images/home/cards/doorway3.webp" alt="Doorway notification history screen" />
-          <img class="tile tile--3" src="images/home/cards/doorway2.webp" alt="Doorway add friends screen" />
-          <img class="tile tile--4" src="images/home/cards/doorway4.webp" alt="Doorway my door screen" />
-          <img class="shot" src="images/home/cover-doorway.webp" alt="Doorway welcome screen" loading="lazy" />
+          <div class="fan">
+            <img src="images/doorway/mockups/home-slide.webp" alt="Doorway home screen with friends' doors" width="640" height="1300" loading="lazy" />
+            <img src="images/doorway/mockups/home-grid.webp" alt="Doorway home screen in grid view" width="640" height="1300" loading="lazy" />
+            <img src="images/doorway/mockups/mydoor-message.webp" alt="Doorway My Door screen with a status message" width="640" height="1300" loading="lazy" />
+          </div>
         </div>
         <div class="project__info">
           <p class="project__type">Product concept</p>
@@ -319,7 +318,6 @@
 <!-- CONTACT -->
 <footer id="contact" class="contact section">
   <div class="wrap">
-    <p class="eyebrow">Contact</p>
     <h2 class="h2">Let’s work together.</h2>
     <p class="contact__sub">Interested in UX, technical support, and the people side of technology.</p>
     <div class="contact__actions">
@@ -350,5 +348,6 @@
     if (document.fonts) document.fonts.ready.then(check);
   })();
 </script>
+<script src="js/nav.js"></script>
 </body>
 </html>

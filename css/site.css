@@ -64,7 +64,7 @@ img { display: block; max-width: 100%; height: auto; }
 .contact .h2 { font-size: clamp(40px, 5.4vw, 72px); margin-bottom: 18px; }
 .contact__sub { font-size: 18px; color: #b3aea7; max-width: 480px; margin: 0 auto 36px; line-height: 1.5; }
 .contact__actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
-/* footer actions are underlined text links with the ↗, matching the homepage hero */
+/* footer actions are underlined text links, matching the homepage hero */
 .contact .contact__actions { gap: 18px 44px; }
 .contact .contact__actions .btn {
   background: none; border: 0; border-radius: 0;
@@ -72,7 +72,6 @@ img { display: block; max-width: 100%; height: auto; }
   font-size: 20px; gap: 10px; color: #f3f1ee;
   transition: gap .2s, color .2s;
 }
-.contact .contact__actions .btn::after { content: "↗"; }
 .contact .contact__actions .btn--red { color: #e0352b; }
 .contact .contact__actions .btn:hover { transform: none; background: none; gap: 14px; }
 .contact__meta {

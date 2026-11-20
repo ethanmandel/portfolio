@@ -10,7 +10,7 @@
   <meta property="og:image" content="https://mandelethan.com/images/home/og.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css?v=2" />
-  <link rel="stylesheet" href="css/case-study.css?v=7" />
+  <link rel="stylesheet" href="css/case-study.css?v=8" />
 </head>
 <body>
 
@@ -29,15 +29,15 @@
 <header class="cs-hero">
   <div class="wrap">
     <div>
-      <a href="index.html#work" class="back"><span aria-hidden="true">←</span> All work</a>
+      <a href="index.html#work" class="back">All work</a>
       <p class="eyebrow">UX / product concept</p>
       <h1>Doorway</h1>
       <p class="cs-hero__lede">A social connection platform concept designed to help people reach out, feel available, and maintain stronger relationships through simple interaction patterns.</p>
     </div>
-    <div class="lineup" aria-hidden="true">
-      <img src="images/home/cards/doorway3.webp" alt="" />
-      <img src="images/home/cover-doorway.webp" alt="" />
-      <img src="images/home/cards/doorway4.webp" alt="" />
+    <div class="lineup lineup--mock" aria-hidden="true">
+      <img src="images/doorway/mockups/home-grid.webp" alt="" width="640" height="1300" />
+      <img src="images/doorway/mockups/home-slide.webp" alt="" width="640" height="1300" />
+      <img src="images/doorway/mockups/mydoor-message.webp" alt="" width="640" height="1300" />
     </div>
     <dl class="facts">
       <div><dt>Role</dt><dd>UX / UI Designer</dd></div>
@@ -195,7 +195,15 @@
           <div class="prose">
             <p>Kaila Long played a pivotal role in developing our initial high-fidelity prototype. Her expertise in Figma helped translate the team’s ideas into a workable prototype.</p>
           </div>
-          <div class="media"><img src="images/doorway/web/firsthifi.webp" alt="Doorway first high-fidelity prototype screens" width="1600" height="859" loading="lazy" /></div>
+          <figure>
+            <div class="mock-seq mock-seq--4">
+              <div><img src="images/doorway/mockups/hifi-welcome.webp" alt="First high-fidelity landing page" width="640" height="1300" loading="lazy" /><span>Landing page</span></div>
+              <div><img src="images/doorway/mockups/hifi-home.webp" alt="First high-fidelity home page with two doors" width="640" height="1300" loading="lazy" /><span>Home page</span></div>
+              <div><img src="images/doorway/mockups/hifi-mydoor.webp" alt="First high-fidelity My Door page with color pickers" width="640" height="1300" loading="lazy" /><span>My Door</span></div>
+              <div><img src="images/doorway/mockups/hifi-history.webp" alt="First high-fidelity history tab" width="640" height="1300" loading="lazy" /><span>History tab</span></div>
+            </div>
+            <figcaption class="caption">Our first high-fidelity prototype, before testing.</figcaption>
+          </figure>
           <ul class="ticks">
             <li>Landing page</li>
             <li>Home page</li>
@@ -234,22 +242,65 @@
         <p class="eyebrow">11 — Final design</p>
         <h2 class="h2">Final design</h2>
         <div class="flow">
-          <div class="media"><img src="images/doorway/web/finalscreenshots.webp" alt="Doorway final design screens" width="1600" height="800" loading="lazy" /></div>
+          <div class="mock-swipe" data-swipe>
+            <div class="mock-swipe__track" tabindex="0" aria-label="Final Doorway screens, scroll sideways to see each one">
+                <div class="mock-swipe__slide"><img src="images/doorway/mockups/welcome.webp" alt="Doorway welcome screen" width="640" height="1300" loading="lazy" /><span>Welcome</span></div>
+                <div class="mock-swipe__slide"><img src="images/doorway/mockups/add-friends.webp" alt="Add Some Neighbors screen with a friends list" width="640" height="1300" loading="lazy" /><span>Add your neighbors</span></div>
+                <div class="mock-swipe__slide"><img src="images/doorway/mockups/home-slide.webp" alt="Home page with doors in a sliding row" width="640" height="1300" loading="lazy" /><span>Home, slide view</span></div>
+                <div class="mock-swipe__slide"><img src="images/doorway/mockups/home-grid.webp" alt="Home page with doors in a grid" width="640" height="1300" loading="lazy" /><span>Home, grid view</span></div>
+            </div>
+            <div class="mock-swipe__dots" role="group" aria-label="Go to screen"></div>
+          </div>
           <div class="prose">
             <p>Our final design evolved significantly from peer feedback and usability evaluations. A key addition was a screen for adding neighbors, addressing a gap in the prior version. We also turned the “knock” function into a tangible button on the door itself, represented by a hand emoji, which let us place statuses directly beneath each door.</p>
           </div>
-          <div class="media"><img src="images/doorway/web/storyreply.webp" alt="Doorway grid view of doors with popup menus" width="1512" height="1000" loading="lazy" /></div>
+          <div class="mock-states" data-states>
+              <div class="mock-states__phone">
+                <img src="images/doorway/mockups/home-grid.webp" alt="Grid of friends’ doors with their statuses" width="640" height="1300" loading="lazy" data-state="0" />
+                <img src="images/doorway/mockups/grid-knocked.webp" alt="Popup when Sofia knocks, with emoji reactions and a reply box" width="640" height="1300" loading="lazy" data-state="1" />
+                <img src="images/doorway/mockups/grid-sent.webp" alt="Knock Sent confirmation at the top of the grid" width="640" height="1300" loading="lazy" data-state="2" />
+              </div>
+              <div class="mock-states__tabs" role="group" aria-label="Grid view states">
+                <button type="button" data-to="0" aria-pressed="true">Grid view</button>
+                <button type="button" data-to="1" aria-pressed="false">Someone knocks</button>
+                <button type="button" data-to="2" aria-pressed="false">Knock sent</button>
+              </div>
+            </div>
           <div class="prose">
             <p>We developed an alternative grid view for doors instead of a sliding carousel, and introduced popup menus for interactions.</p>
           </div>
-          <div class="media"><img src="images/doorway/web/sendingknock.webp" alt="Doorway closed-door popup suggesting to knock later" width="1600" height="800" loading="lazy" /></div>
+          <figure>
+            <div class="mock-seq mock-seq--4">
+              <div><img src="images/doorway/mockups/home-slide.webp" alt="Jasmine’s door in the slide view" width="640" height="1300" loading="lazy" /><span>Knock on a door</span></div>
+              <div><img src="images/doorway/mockups/closed-door.webp" alt="Popup saying Jasmine’s door is closed, with Knock Anyway and Notify Me" width="640" height="1300" loading="lazy" /><span>Door’s closed</span></div>
+              <div><img src="images/doorway/mockups/send-knock.webp" alt="Popup to send a knock to Jasmine with an emoji and a message" width="640" height="1300" loading="lazy" /><span>Leave a note</span></div>
+              <div><img src="images/doorway/mockups/slide-sent.webp" alt="Knock Sent confirmation" width="640" height="1300" loading="lazy" /><span>Knock sent</span></div>
+            </div>
+            <figcaption class="caption">Knocking on a closed door: knock anyway, or get notified when it opens.</figcaption>
+          </figure>
           <div class="prose">
             <p>To resolve the ambiguity between closed and open doors from testing, we added a popup that tells you when a door is closed and suggests knocking later or getting notified when it opens. It keeps connection engaging while respecting people’s boundaries.</p>
           </div>
-          <div class="gallery gallery--2">
-            <div class="media"><img src="images/doorway/web/history.webp" alt="Doorway history tab" width="1512" height="1000" loading="lazy" /></div>
-            <div class="media"><img src="images/doorway/web/doorsettings.webp" alt="Doorway My Door settings with open and closed states" width="1490" height="1000" loading="lazy" /></div>
-          </div>
+          <figure>
+            <div class="mock-seq">
+              <div><img src="images/doorway/mockups/history.webp" alt="History tab listing knocks and opened doors" width="640" height="1300" loading="lazy" /><span>History</span></div>
+              <div><img src="images/doorway/mockups/history-reply.webp" alt="Replying to Katy’s knock from the history tab" width="640" height="1300" loading="lazy" /><span>Reply to a knock</span></div>
+              <div><img src="images/doorway/mockups/history-sent.webp" alt="Knock Sent confirmation on the history tab" width="640" height="1300" loading="lazy" /><span>Knock sent</span></div>
+            </div>
+            <figcaption class="caption">History keeps every knock, so you can reply when you have time.</figcaption>
+          </figure>
+          <div class="mock-states" data-states>
+              <div class="mock-states__phone">
+                <img src="images/doorway/mockups/mydoor-closed.webp" alt="My Door, closed, with no status yet" width="640" height="1300" loading="lazy" data-state="0" />
+                <img src="images/doorway/mockups/mydoor-message.webp" alt="My Door, closed, with a status message for friends" width="640" height="1300" loading="lazy" data-state="1" />
+                <img src="images/doorway/mockups/mydoor-open.webp" alt="My Door, open, with a status message" width="640" height="1300" loading="lazy" data-state="2" />
+              </div>
+              <div class="mock-states__tabs" role="group" aria-label="My Door states">
+                <button type="button" data-to="0" aria-pressed="true">Closed</button>
+                <button type="button" data-to="1" aria-pressed="false">Add a status</button>
+                <button type="button" data-to="2" aria-pressed="false">Open the door</button>
+              </div>
+            </div>
           <div class="prose">
             <p>The door page lets you open or close your door and update your status, keeping friends informed about your activities or mood. You can change the door’s color, choose emojis, or upload photos, and the interface suggests status messages as you open or close your door.</p>
           </div>
@@ -289,14 +340,12 @@
       <p class="eyebrow">Next project</p>
       <h2>Momento</h2>
     </div>
-    <span class="next__arrow" aria-hidden="true">→</span>
   </div>
 </a>
 
 <!-- CONTACT -->
 <footer id="contact" class="contact section">
   <div class="wrap">
-    <p class="eyebrow">Contact</p>
     <h2 class="h2">Let’s work together.</h2>
     <p class="contact__sub">Interested in UX, technical support, and the people side of technology.</p>
     <div class="contact__actions">
@@ -312,6 +361,7 @@
   </div>
 </footer>
 
-<script src="js/case-study.js?v=2"></script>
+<script src="js/case-study.js?v=3"></script>
+<script src="js/nav.js"></script>
 </body>
 </html>

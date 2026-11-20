@@ -112,7 +112,6 @@
 .logo-panel { background: var(--black); border-radius: 22px; padding: 9% 12%; display: grid; place-items: center; }
 .logo-panel img { width: 100%; max-width: 420px; }
 .text-link { color: var(--red); font-weight: 600; border-bottom: 1.5px solid currentColor; padding-bottom: 1px; }
-.text-link::after { content: " ↗"; }
 
 /* iPad frame drawn in CSS, so plain screenshots can be swapped in any time.
    Even dark bezel, rounded corners, a faint edge highlight, sat on a silver panel. */
@@ -126,6 +125,92 @@
 .device-shot { width: 100%; }
 .device-row { width: 100%; display: grid; grid-template-columns: repeat(2, 1fr); gap: 6%; }
 
+/* Remembra: iPhone mockups (mockuphone frames with transparent backgrounds) */
+.lineup--mock img { border-radius: 0; }
+.features--stack { grid-template-columns: 1fr; gap: 72px; }
+.features--stack .feature p { max-width: 600px; }
+.mock-fan, .mock-swipe, .mock-states, .mock-seq { background: var(--silver); border-radius: 22px; margin-bottom: 18px; }
+.mock-fan img, .mock-swipe img, .mock-states img, .mock-seq img { filter: drop-shadow(0 14px 20px rgba(0,0,0,.16)); }
+
+/* Fan: the player in front, library and profile tilted behind it */
+.mock-fan { position: relative; aspect-ratio: 16 / 11; overflow: hidden; }
+.mock-fan img { position: absolute; top: 9%; width: 30%; transition: transform .5s cubic-bezier(.3,1.12,.6,1); }
+.mock-fan img:nth-child(1) { left: 14%; transform: rotate(-8deg) translateY(6%); }
+.mock-fan img:nth-child(2) { left: 35%; z-index: 1; }
+.mock-fan img:nth-child(3) { right: 14%; transform: rotate(8deg) translateY(6%); }
+.mock-fan:hover img:nth-child(1) { transform: rotate(-11deg) translate(-8%, 6%); }
+.mock-fan:hover img:nth-child(3) { transform: rotate(11deg) translate(8%, 6%); }
+
+/* Swipe: the onboarding steps in a row you scroll through, the next one peeking in */
+.mock-swipe { padding: 7% 0 5%; }
+.mock-swipe__track { position: relative; display: flex; gap: 4%; overflow-x: auto; scroll-snap-type: x mandatory; padding: 12px 0 24px; scrollbar-width: none; overscroll-behavior-x: contain; }
+/* empty space at both ends so the first and last phones can sit in the middle */
+.mock-swipe__track::before, .mock-swipe__track::after { content: ""; flex: 0 0 31%; }
+.mock-swipe__track::-webkit-scrollbar { display: none; }
+.mock-swipe__track:focus-visible { outline: 2px solid var(--red); outline-offset: -2px; }
+.mock-swipe__slide { flex: 0 0 30%; cursor: pointer; scroll-snap-align: center; text-align: center; opacity: .45; transform: scale(.92); transition: opacity .35s, transform .35s; }
+.mock-swipe__slide.is-active { opacity: 1; transform: none; }
+.mock-swipe__slide img { width: 100%; }
+.mock-swipe__slide span { display: block; margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--muted); }
+.mock-swipe__dots { display: flex; justify-content: center; gap: 10px; margin-top: 18px; }
+.mock-swipe__dots button { width: 9px; height: 9px; padding: 0; border: 0; border-radius: 50%; background: #c9c9c9; cursor: pointer; transition: background .2s, transform .2s; }
+.mock-swipe__dots button[aria-current="true"] { background: var(--red); transform: scale(1.25); }
+
+/* States: one phone, three moments of the memory game */
+.mock-states { padding: 7% 0 6%; display: grid; justify-items: center; gap: 22px; }
+.mock-states__phone { display: grid; width: 28%; }
+.mock-states__phone img { grid-area: 1 / 1; width: 100%; opacity: 0; transition: opacity .45s ease; }
+.mock-states__phone img.is-on { opacity: 1; }
+.mock-states__tabs { display: inline-flex; gap: 4px; padding: 4px; background: #fff; border-radius: 999px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.mock-states__tabs button { font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1; border: 0; background: none; color: var(--muted); padding: 10px 16px; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s; }
+.mock-states__tabs button[aria-pressed="true"] { background: var(--red); color: #fff; }
+
+/* Sequence: listening, then the alert when heart rate rises or drops */
+.mock-seq { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5%; padding: 7% 8% 5%; }
+.mock-seq > div { text-align: center; }
+.mock-seq > div:nth-child(2) { transform: translateY(-5%); }
+.mock-seq img { width: 100%; }
+.mock-seq span { display: block; margin-top: 14px; font-size: 14px; font-weight: 600; color: var(--muted); }
+.mock-seq > div:nth-child(n+2) span { color: var(--red); }
+
+/* Laguna: MacBook and iPhone mockups */
+/* Duo: the MacBook with the phone standing in front of its right corner */
+.lag-duo { position: relative; aspect-ratio: 1.42 / 1; }
+.lag-duo img { position: absolute; }
+.lag-duo__mac { left: 0; top: 4%; width: 86%; }
+.lag-duo__phone { right: 0; bottom: 0; width: 25%; filter: drop-shadow(0 14px 20px rgba(0,0,0,.18)); }
+.lag-duo--hero img { animation: rise .6s cubic-bezier(.3,1.12,.6,1) both; }
+.lag-duo--hero .lag-duo__phone { animation-delay: .1s; }
+.lag-duo--panel { background: var(--silver); border-radius: 22px; aspect-ratio: auto; padding: 6% 5% 5%; }
+.lag-duo--panel .lag-duo__mac { position: static; width: 82%; }
+.lag-duo--panel .lag-duo__phone { right: 6%; bottom: 6%; width: 21%; }
+
+/* Swipe through laptops: wider slides than the phone version */
+.mock-swipe--mac .mock-swipe__track { gap: 3%; }
+.mock-swipe--mac .mock-swipe__track::before, .mock-swipe--mac .mock-swipe__track::after { flex-basis: 12%; }
+.mock-swipe--mac .mock-swipe__slide { flex-basis: 74%; }
+.mock-swipe--mac img { filter: none; }
+
+/* Four phones in a row */
+.mock-seq--4 { grid-template-columns: repeat(4, 1fr); gap: 4%; padding: 7% 6% 5%; }
+.mock-seq--4 > div:nth-child(2) { transform: none; }
+.mock-seq--4 > div:nth-child(even) span { color: var(--red); }
+.mock-seq--4 > div:nth-child(3) span { color: var(--muted); }
+
+/* Before / after: one MacBook, switch the page and the version */
+.compare { background: var(--silver); border-radius: 22px; padding: 6% 6% 5%; display: grid; gap: 24px; justify-items: center; }
+.compare__screen { display: grid; width: 100%; }
+.compare__screen img { grid-area: 1 / 1; width: 100%; opacity: 0; transition: opacity .35s ease; }
+.compare__screen img.is-on { opacity: 1; }
+.compare__controls { display: grid; gap: 12px; justify-items: center; }
+.compare__when, .compare__pages { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 4px; padding: 4px; background: #fff; border-radius: 999px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.compare__when button, .compare__pages button { font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1; border: 0; background: none; color: var(--muted); padding: 10px 16px; border-radius: 999px; cursor: pointer; transition: background .2s, color .2s; }
+.compare__when button[aria-pressed="true"] { background: var(--red); color: #fff; }
+.compare__pages button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.compare + .caption { margin-top: -8px; }
+.lag-open figure { margin: 0; }
+.lag-open img { width: 100%; }
+
 /* TAKEAWAYS: red, like the About section on the homepage */
 .takeaways { background: var(--red); color: #fbf3f1; }
 .takeaways .eyebrow { color: rgba(255,255,255,.65); }
@@ -137,9 +222,7 @@
 .next .wrap { display: flex; align-items: center; justify-content: space-between; gap: 32px; padding-top: 72px; padding-bottom: 72px; }
 .next .eyebrow { margin-bottom: 10px; }
 .next h2 { font-size: clamp(32px, 4.4vw, 56px); font-weight: 700; letter-spacing: -.03em; }
-.next__arrow { font-size: 40px; transition: transform .3s cubic-bezier(.3,1.12,.6,1); }
 .next:hover { background: #e9e9e9; }
-.next:hover .next__arrow { transform: translateX(10px); color: var(--red); }
 
 @media (max-width: 900px) {
   /* phones: text, then the three screens fully in view, then the facts */
@@ -158,6 +241,24 @@
   .cs-content { gap: 72px; }
   .prose { font-size: 17px; }
   .stats, .features, .gallery--2, .gallery--3, .paths, .quotes { grid-template-columns: 1fr; }
+  .mock-swipe__track::before, .mock-swipe__track::after { flex-basis: 21%; }
+  .mock-swipe__slide { flex-basis: 50%; }
+  .mock-states__phone { width: 52%; }
+  .mock-states__tabs button { padding: 9px 12px; font-size: 13px; }
+  .mock-fan { aspect-ratio: 1 / 1; }
+  .mock-fan img { width: 40%; top: 12%; }
+  .mock-fan img:nth-child(1) { left: 4%; }
+  .mock-fan img:nth-child(2) { left: 30%; }
+  .mock-fan img:nth-child(3) { right: 4%; }
+  .mock-seq { padding: 8% 5% 6%; gap: 4%; }
+  .mock-seq span { font-size: 12px; }
+  .mock-seq--4 { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
+  .mock-swipe--mac .mock-swipe__track::before, .mock-swipe--mac .mock-swipe__track::after { flex-basis: 6%; }
+  .mock-swipe--mac .mock-swipe__slide { flex-basis: 88%; }
+  .compare { padding: 6% 4% 5%; gap: 18px; }
+  .compare__pages { border-radius: 18px; }
+  .compare__when button, .compare__pages button { padding: 9px 12px; font-size: 13px; }
+  .lag-duo--hero { width: 100%; max-width: 480px; margin: 36px auto 0; }
   .steps { grid-template-columns: 1fr 1fr; gap: 28px 20px; }
   .print-wall { gap: 5%; padding: 7%; }
   .device-row { grid-template-columns: 1fr; gap: 20px; }
@@ -168,6 +269,7 @@
   .next .wrap { padding-top: 48px; padding-bottom: 48px; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .mock-fan img, .mock-swipe__slide, .mock-states__phone img, .compare__screen img { transition: none; }
+  .lag-duo--hero img { animation: none; }
   .lineup img, .hero-devices img { animation: none; }
-  .next__arrow { transition: none; }
 }

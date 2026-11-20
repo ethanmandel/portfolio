@@ -10,7 +10,7 @@
   <meta property="og:image" content="https://mandelethan.com/images/home/og.jpg" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/site.css?v=2" />
-  <link rel="stylesheet" href="css/case-study.css?v=7" />
+  <link rel="stylesheet" href="css/case-study.css?v=8" />
 </head>
 <body>
 
@@ -29,15 +29,15 @@
 <header class="cs-hero">
   <div class="wrap">
     <div>
-      <a href="index.html#work" class="back"><span aria-hidden="true">←</span> All work</a>
+      <a href="index.html#work" class="back">All work</a>
       <p class="eyebrow">App concept / UX case study</p>
       <h1>Remembra</h1>
       <p class="cs-hero__lede">Leveraging music and technology to support memory, improve emotional well-being, and enhance quality of life.</p>
     </div>
-    <div class="lineup" aria-hidden="true">
-      <img src="images/home/cards/remembra-profile.webp" alt="" />
-      <img src="images/home/cover-remembra.webp" alt="" />
-      <img src="images/home/cards/remembra-quiz.webp" alt="" />
+    <div class="lineup lineup--mock" aria-hidden="true">
+      <img src="images/remembra/mockups/my-profile.webp" alt="" width="640" height="1300" />
+      <img src="images/remembra/mockups/now-playing.webp" alt="" width="640" height="1300" />
+      <img src="images/remembra/mockups/memory-game-right.webp" alt="" width="640" height="1300" />
     </div>
     <dl class="facts">
       <div><dt>Role</dt><dd>UX Lead</dd></div>
@@ -91,24 +91,52 @@
       <section id="features" class="cs-section">
         <p class="eyebrow">03 — Features</p>
         <h2 class="h2">Features</h2>
-        <div class="features">
+        <div class="features features--stack">
           <figure class="feature">
-            <div class="media"><img src="images/remembra/web/feature1.webp" alt="Remembra screens for personalized AI music recommendations" width="1490" height="1000" loading="lazy" /></div>
+            <div class="mock-fan">
+              <img src="images/remembra/mockups/my-library.webp" alt="My Library screen listing saved songs" width="640" height="1300" loading="lazy" />
+              <img src="images/remembra/mockups/now-playing.webp" alt="Now Playing screen with the Backstreet Boys album cover" width="640" height="1300" loading="lazy" />
+              <img src="images/remembra/mockups/my-profile.webp" alt="My Profile screen with top tracks and a week of listening" width="640" height="1300" loading="lazy" />
+            </div>
             <h3>Personalized AI</h3>
             <p>Music recommendations designed around your personal memories and preferences.</p>
           </figure>
           <figure class="feature">
-            <div class="media"><img src="images/remembra/web/feature2.webp" alt="Remembra setup screens with large, simple controls" width="1490" height="1000" loading="lazy" /></div>
+            <div class="mock-swipe" data-swipe>
+              <div class="mock-swipe__track" tabindex="0" aria-label="Onboarding screens, scroll sideways to see each step">
+                <div class="mock-swipe__slide"><img src="images/remembra/mockups/welcome.webp" alt="Welcome screen explaining what Remembra does" width="640" height="1300" loading="lazy" /><span>Welcome</span></div>
+                <div class="mock-swipe__slide"><img src="images/remembra/mockups/setup-selection.webp" alt="Choosing quick or detailed setup" width="640" height="1300" loading="lazy" /><span>Quick or detailed setup</span></div>
+                <div class="mock-swipe__slide"><img src="images/remembra/mockups/fine-tune.webp" alt="Opting in to biosensor tracking and AI suggestions" width="640" height="1300" loading="lazy" /><span>Fine-tune the experience</span></div>
+                <div class="mock-swipe__slide"><img src="images/remembra/mockups/household-influences.webp" alt="Adding music from the household you grew up in" width="640" height="1300" loading="lazy" /><span>Household influences</span></div>
+                <div class="mock-swipe__slide"><img src="images/remembra/mockups/manage-triggers.webp" alt="Listing artists, albums and songs to avoid" width="640" height="1300" loading="lazy" /><span>Manage triggers</span></div>
+              </div>
+              <div class="mock-swipe__dots" role="group" aria-label="Go to onboarding step"></div>
+            </div>
             <h3>User friendly</h3>
             <p>Intuitive and simple, designed to be easily accessible by users of all ages.</p>
           </figure>
           <figure class="feature">
-            <div class="media"><img src="images/remembra/web/feature3.webp" alt="Remembra memory game screens" width="1490" height="1000" loading="lazy" /></div>
+            <div class="mock-states" data-states>
+              <div class="mock-states__phone">
+                <img src="images/remembra/mockups/memory-game.webp" alt="Memory game asking which 2024 song from your library is playing" width="640" height="1300" loading="lazy" data-state="0" />
+                <img src="images/remembra/mockups/memory-game-wrong.webp" alt="Memory game with a wrong answer highlighted in red" width="640" height="1300" loading="lazy" data-state="1" />
+                <img src="images/remembra/mockups/memory-game-right.webp" alt="Memory game with the right answer highlighted in green" width="640" height="1300" loading="lazy" data-state="2" />
+              </div>
+              <div class="mock-states__tabs" role="group" aria-label="Memory game states">
+                <button type="button" data-to="0" aria-pressed="true">Question</button>
+                <button type="button" data-to="1" aria-pressed="false">Wrong guess</button>
+                <button type="button" data-to="2" aria-pressed="false">Right guess</button>
+              </div>
+            </div>
             <h3>Gamification</h3>
             <p>Test your memory and turn everyday music therapy into playful memory challenges.</p>
           </figure>
           <figure class="feature">
-            <div class="media"><img src="images/remembra/web/feature4.webp" alt="Remembra heart rate alert screens" width="1490" height="1000" loading="lazy" /></div>
+            <div class="mock-seq">
+              <div><img src="images/remembra/mockups/now-playing-fancy.webp" alt="Listening to Fancy by TWICE" width="640" height="1300" loading="lazy" /><span>Listening</span></div>
+              <div><img src="images/remembra/mockups/heart-rate-alert-up.webp" alt="Heart rate alert: heart rate rose by 35 BPM while playing Fancy" width="640" height="1300" loading="lazy" /><span>Heart rate rises</span></div>
+              <div><img src="images/remembra/mockups/heart-rate-alert-down.webp" alt="Heart rate alert: heart rate dropped by 35 BPM while playing Liability" width="640" height="1300" loading="lazy" /><span>Heart rate drops</span></div>
+            </div>
             <h3>Biosensors</h3>
             <p>Real-time heart rate and activity tracking provide live feedback, so each music session is continually refined for comfort and effectiveness.</p>
           </figure>
@@ -204,14 +232,12 @@
       <p class="eyebrow">Next project</p>
       <h2>Laguna Ocean Foundation</h2>
     </div>
-    <span class="next__arrow" aria-hidden="true">→</span>
   </div>
 </a>
 
 <!-- CONTACT -->
 <footer id="contact" class="contact section">
   <div class="wrap">
-    <p class="eyebrow">Contact</p>
     <h2 class="h2">Let’s work together.</h2>
     <p class="contact__sub">Interested in UX, technical support, and the people side of technology.</p>
     <div class="contact__actions">
@@ -227,6 +253,7 @@
   </div>
 </footer>
 
-<script src="js/case-study.js?v=2"></script>
+<script src="js/case-study.js?v=3"></script>
+<script src="js/nav.js"></script>
 </body>
 </html>
